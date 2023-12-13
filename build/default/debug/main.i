@@ -39111,14 +39111,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 # 1 "./constants.h" 1
 # 8 "./uart.h" 2
-
-
-
-
-
-
-
-
+# 18 "./uart.h"
 static void setupUART(){
 
 
@@ -39146,10 +39139,42 @@ void printLn(char* string, int length){
     transmit('\n');
     transmit('\r');
 }
+
+void read(char* buffer, int buffer_size){
+    while(0){
+
+
+    }
+}
 # 25 "main.c" 2
 
 # 1 "./sim.h" 1
-# 17 "./sim.h"
+# 10 "./sim.h"
+# 1 "./uart.h" 1
+# 10 "./sim.h" 2
+# 19 "./sim.h"
+void bufferCommand(char* command, int tLength, char* buffer, int bLength){
+    printLn(command, tLength);
+    read(buffer, sizeof(buffer)/sizeof(char));
+}
+
+
+uint8_t sendCommand(char* command, int length){
+    char buffer[32];
+    bufferCommand(command, length, buffer, sizeof(buffer)/sizeof(char));
+    return (buffer[0]=='O' && buffer[1]=='K');
+}
+
+
+uint8_t checkCommand(char* command, int tLength, char* response, int rLength){
+    char buffer[32];
+    bufferCommand(command, tLength, buffer, sizeof(buffer)/sizeof(char));
+    for(int i=0; i<rLength; i++){
+        if(*(response+i) != *(buffer+i))return 0;
+    }
+    return 1;
+}
+
 struct SIM{
     uint8_t card;
     uint8_t connection;
@@ -39162,7 +39187,9 @@ uint8_t SIMCardExists(){
 
 
 
-    return 1;
+    char* command="AT+CPIN=?";
+    char* response="READY";
+    return checkCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
 }
 
 uint8_t makeConnection(){

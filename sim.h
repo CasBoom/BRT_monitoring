@@ -5,6 +5,7 @@
  * Created on December 3, 2023, 1:54 PM
  */
 
+#include <stdint.h>
 #include "constants.h"
 #include "uart.h"
 #ifndef SIM_H
@@ -17,24 +18,24 @@ extern "C" {
 //sends response to buffer for more involved response flows
 void bufferCommand(char* command, int tLength, char* buffer, int bLength){
     printLn(command, tLength);
-    read(&buffer, sizeof(buffer)/sizeof(char));
+    read(buffer, sizeof(buffer)/sizeof(char));
 }
 
 // send a simple AT command
-bool sendCommand(char* command, int length){
+uint8_t sendCommand(char* command, int length){
     char buffer[32];
-    bufferCommand(command, length, buffer[32], sizeof(buffer)/sizeof(char));
+    bufferCommand(command, length, buffer, sizeof(buffer)/sizeof(char));
     return (buffer[0]=='O' && buffer[1]=='K'); //returns true if OK, otherwise returns false;
 }
 
 // send AT command with non-standard expected response
-bool sendCommand(char* command, int tLength, char* response, int rLength){
+uint8_t checkCommand(char* command, int tLength, char* response, int rLength){
     char buffer[32];
-    bufferCommand(command, tLength, buffer[32], sizeof(buffer)/sizeof(char));
+    bufferCommand(command, tLength, buffer, sizeof(buffer)/sizeof(char));
     for(int i=0; i<rLength; i++){
-        if(response+i != buffer+i)return false;
+        if(*(response+i) != *(buffer+i))return 0;
     }
-    return true;
+    return 1;
 }
 
 struct SIM{
@@ -51,7 +52,7 @@ uint8_t SIMCardExists(){
     // return 0 if not
     char* command="AT+CPIN=?";
     char* response="READY";
-    return sendCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
+    return checkCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
 }
 
 uint8_t makeConnection(){

@@ -1,0 +1,725 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+init CODE 0 1A 1A 4 1 2
+reset_vec CODE 0 0 0 4 1 2
+config CONFIG 4 300000 300000 1F 1 1
+$dist/default/debug\BRT_monitoring.debug.o
+ivt0x8 CODE 0 8 8 12 1 2
+cinit CODE 0 399C 399C 20 1 2
+text0 CODE 0 386C 386C 50 1 2
+text1 CODE 0 38BC 38BC 4A 1 2
+text2 CODE 0 3A0E 3A0E 4 1 2
+text3 CODE 0 3950 3950 26 1 2
+text4 CODE 0 37E2 37E2 8A 1 2
+text5 CODE 0 3976 3976 26 1 2
+text6 CODE 0 3A12 3A12 2 1 2
+text7 CODE 0 39BC 39BC 1E 1 2
+text8 CODE 0 3906 3906 4A 1 2
+text9 CODE 0 39DA 39DA 18 1 2
+text10 CODE 0 3A08 3A08 6 1 2
+text11 CODE 0 39F2 39F2 16 1 2
+text12 CODE 0 3722 3722 C0 1 2
+text13 CODE 0 3A14 3A14 2 1 2
+text14 CODE 0 3A16 3A16 2 1 2
+text15 CODE 0 3A18 3A18 2 1 2
+cstackCOMRAM COMRAM 1 501 501 49 1 1
+smallconst SMALLCONST 0 3700 3700 22 1 2
+bssCOMRAM COMRAM 1 54A 54A 9 1 1
+config CONFIG 4 300000 300000 1F 1 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 560-36FF 1
+SFR 0-4FF 1
+SFR 3700-3FFF 1
+BANK5 560-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+BANK8 800-8FF 1
+BANK9 900-9FF 1
+CONST 4-7 1
+CONST 1E-36FF 1
+CONST 3A1A-1FFFF 1
+IDLOC 200000-20003F 1
+SMALLCONST 3A1A-1FFFF 1
+CODE 4-7 1
+CODE 1E-36FF 1
+CODE 3A1A-1FFFF 1
+BANK10 A00-AFF 1
+BANK11 B00-BFF 1
+BANK12 C00-CFF 1
+BANK13 D00-DFF 1
+BANK14 E00-EFF 1
+BANK15 F00-FFF 1
+BANK16 1000-10FF 1
+BANK17 1100-11FF 1
+BANK18 1200-12FF 1
+BANK19 1300-13FF 1
+BANK20 1400-14FF 1
+BANK21 1500-15FF 1
+BANK22 1600-16FF 1
+BANK23 1700-17FF 1
+BANK24 1800-18FF 1
+BANK25 1900-19FF 1
+BANK26 1A00-1AFF 1
+BANK27 1B00-1BFF 1
+BANK28 1C00-1CFF 1
+BANK29 1D00-1DFF 1
+BANK30 1E00-1EFF 1
+BANK31 1F00-1FFF 1
+BANK32 2000-20FF 1
+BANK33 2100-21FF 1
+BANK34 2200-22FF 1
+BANK35 2300-23FF 1
+BANK36 2400-24FF 1
+BANK37 2500-25FF 1
+BANK38 2600-26FF 1
+BANK39 2700-27FF 1
+BANK40 2800-28FF 1
+BANK41 2900-29FF 1
+BANK42 2A00-2AFF 1
+BANK43 2B00-2BFF 1
+BANK44 2C00-2CFF 1
+BANK45 2D00-2DFF 1
+BANK46 2E00-2EFF 1
+BANK47 2F00-2FFF 1
+BANK48 3000-30FF 1
+BANK49 3100-31FF 1
+BANK50 3200-32FF 1
+BANK51 3300-33FF 1
+BANK52 3400-34FF 1
+BANK53 3500-35FF 1
+BANK54 3600-36FF 1
+BIGRAM 553-36FF 1
+BIGSFR 0-4FF 1
+BIGSFR 3700-3FFF 1
+COMRAM 553-55F 1
+CONFIG 30001F-300023 1
+EEDATA 380000-3803FF 1
+MEDIUMCONST 3A1A-FFFF 1
+MEDIUMCONST 13700-1FFFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/debug\BRT_monitoring.debug.o
+3A18 text15 CODE >157:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/spi1.c
+3A18 text15 CODE >160:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/spi1.c
+3A16 text14 CODE >167:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/spi1.c
+3A16 text14 CODE >170:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/spi1.c
+3A14 text13 CODE >177:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/spi1.c
+3A14 text13 CODE >180:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/spi1.c
+3722 text12 CODE >58:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+372A text12 CODE >61:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+3746 text12 CODE >63:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+3760 text12 CODE >64:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+3764 text12 CODE >65:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+3780 text12 CODE >67:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+379A text12 CODE >68:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+379E text12 CODE >69:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+37BA text12 CODE >71:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+37D4 text12 CODE >72:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+37D8 text12 CODE >76:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+37D8 text12 CODE >77:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
+39F2 text11 CODE >18:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+39F2 text11 CODE >22:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+39FC text11 CODE >23:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3A00 text11 CODE >25:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3A04 text11 CODE >26:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3A06 text11 CODE >27:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3A08 text10 CODE >37:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+3A08 text10 CODE >38:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+3A0C text10 CODE >39:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+39DA text9 CODE >29:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+39DC text9 CODE >30:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+39EC text9 CODE >31:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+39F0 text9 CODE >32:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3906 text8 CODE >34:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3906 text8 CODE >35:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3912 text8 CODE >36:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+392C text8 CODE >37:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+394E text8 CODE >38:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+39BC text7 CODE >40:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+39BC text7 CODE >41:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+39CC text7 CODE >42:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+39D2 text7 CODE >43:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+39D8 text7 CODE >44:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3A12 text6 CODE >46:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3A12 text6 CODE >47:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3A12 text6 CODE >51:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+3976 text5 CODE >19:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3976 text5 CODE >20:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3986 text5 CODE >21:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+399A text5 CODE >22:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+37E2 text4 CODE >32:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+37E2 text4 CODE >34:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3802 text4 CODE >35:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+380E text4 CODE >36:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3846 text4 CODE >37:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3868 text4 CODE >38:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+386A text4 CODE >39:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3950 text3 CODE >49:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3950 text3 CODE >53:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3954 text3 CODE >54:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3958 text3 CODE >55:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3974 text3 CODE >56:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3A0E text2 CODE >64:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3A0E text2 CODE >70:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3A10 text2 CODE >74:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+38BC text1 CODE >76:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+38BC text1 CODE >78:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+38C6 text1 CODE >79:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+38D4 text1 CODE >80:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+38EC text1 CODE >81:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+38F8 text1 CODE >83:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+3904 text1 CODE >88:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+386C text0 CODE >45:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+386C text0 CODE >47:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+3872 text0 CODE >49:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+3876 text0 CODE >55:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+387A text0 CODE >56:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+3886 text0 CODE >61:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+3888 text0 CODE >63:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+388C text0 CODE >64:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+3890 text0 CODE >65:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+3896 text0 CODE >66:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+389A text0 CODE >73:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+38A0 text0 CODE >75:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+38A4 text0 CODE >76:C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
+399C cinit CODE >14823:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+399C cinit CODE >14825:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+399C cinit CODE >14828:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+399C cinit CODE >14846:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39A0 cinit CODE >14847:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39A2 cinit CODE >14848:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39A2 cinit CODE >14849:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39A4 cinit CODE >14850:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39A6 cinit CODE >14851:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39A8 cinit CODE >14859:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39AA cinit CODE >14860:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39AC cinit CODE >14861:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39AE cinit CODE >14862:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39B0 cinit CODE >14863:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39B2 cinit CODE >14864:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39B4 cinit CODE >14865:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39B6 cinit CODE >14871:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39B6 cinit CODE >14873:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+39B8 cinit CODE >14874:C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_1.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_SPI1SCKPPS 26A 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SPI1SDIPPS 26B 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\BRT_monitoring.debug.o
+__Hspace_0 3A1A 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Hspace_1 553 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Hspace_2 0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Hspace_4 60001F 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+SIMCardExists@response 53F 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\BRT_monitoring.debug.o
+transmit@byte 503 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+setupSIM@sim 540 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\BRT_monitoring.debug.o
+__L__absolute__ 0 0 ABS 0 __absolute__ dist/default/debug\BRT_monitoring.debug.o
+__Lsmallconst 3700 0 SMALLCONST 0 smallconst dist/default/debug\BRT_monitoring.debug.o
+_LATA 4BE 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_LATB 4BF 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_LATC 4C0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_LATD 4C1 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_LATE 4C2 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_PMD0 60 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_PMD1 61 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_PMD2 62 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_PMD3 63 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_PMD4 64 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_PMD5 65 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_PMD6 66 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_PMD7 67 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_PMD8 68 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_WPUA 401 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_WPUB 409 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_WPUC 411 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_WPUD 419 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_WPUE 421 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+___sp 0 0 STACK 2 stack C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+_main 386C 0 CODE 0 text0 dist/default/debug\BRT_monitoring.debug.o
+_read 3A12 0 CODE 0 text6 dist/default/debug\BRT_monitoring.debug.o
+___stack_hi 0 0 STACK 2 stack C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+___stack_lo 0 0 STACK 2 stack C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+start 1A 0 CODE 0 init C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\BRT_monitoring.debug.o
+_SPI1_TxInterruptHandler 54A 0 COMRAM 1 bssCOMRAM dist/default/debug\BRT_monitoring.debug.o
+_C1CONHbits 101 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_C1CONTbits 103 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_C1CONUbits 102 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+checkCommand@response 517 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__Hpowerup 0 0 CODE 0 powerup dist/default/debug\BRT_monitoring.debug.o
+__end_of_spi1_configuration 370F 0 SMALLCONST 0 smallconst dist/default/debug\BRT_monitoring.debug.o
+bufferCommand@command 50D 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+_updateCoordinates 3A0E 0 CODE 0 text2 dist/default/debug\BRT_monitoring.debug.o
+bufferCommand@buffer 510 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__accesstop 560 0 ABS 0 - C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+intlevel0 0 0 CODE 0 text C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+intlevel1 0 0 CODE 0 text C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+intlevel2 0 0 CODE 0 text C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+intlevel3 0 0 CODE 0 text C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\BRT_monitoring.debug.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/debug\BRT_monitoring.debug.o
+checkCommand@rLength 518 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/debug\BRT_monitoring.debug.o
+__end_of_setupRegs 3A0E 0 CODE 0 text10 dist/default/debug\BRT_monitoring.debug.o
+__end_of_setupUART 3A08 0 CODE 0 text11 dist/default/debug\BRT_monitoring.debug.o
+__end_of_bufferCommand 399C 0 CODE 0 text5 dist/default/debug\BRT_monitoring.debug.o
+read@buffer_size 505 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+print@length 505 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+updateCoordinates@sim 503 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+ivt0x8_base 8 0 CODE 0 ivt0x8 dist/default/debug\BRT_monitoring.debug.o
+_SPI1CON0bits 84 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_spi1_configuration 370A 0 SMALLCONST 0 smallconst dist/default/debug\BRT_monitoring.debug.o
+_ANSELA 400 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_ANSELB 408 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_ANSELC 410 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_ANSELD 418 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_ANSELE 420 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+_C1CONH 101 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_C1CONL 100 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_C1CONU 102 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__end_of_INTERRUPT_InterruptManager 37E2 0 CODE 0 text12 dist/default/debug\BRT_monitoring.debug.o
+_SPI1_RxInterruptHandler 54D 0 COMRAM 1 bssCOMRAM dist/default/debug\BRT_monitoring.debug.o
+_setupRegs 3A08 0 CODE 0 text10 dist/default/debug\BRT_monitoring.debug.o
+_setupUART 39F2 0 CODE 0 text11 dist/default/debug\BRT_monitoring.debug.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\BRT_monitoring.debug.o
+main@sim 543 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+print@string 504 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\BRT_monitoring.debug.o
+__end_of_SIMCardExists 3976 0 CODE 0 text3 dist/default/debug\BRT_monitoring.debug.o
+_INLVLA 404 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_INLVLB 40C 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_INLVLC 414 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_INLVLD 41C 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_INLVLE 424 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_INTCON0bits 4D6 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+start_initialization 399C 0 CODE 0 cinit dist/default/debug\BRT_monitoring.debug.o
+_ODCONA 402 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_ODCONB 40A 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_ODCONC 412 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_ODCOND 41A 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_ODCONE 422 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_OSCFRQ B1 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\BRT_monitoring.debug.o
+_TRISCbits 4C8 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+___rparam_used 1 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_RC3PPS 214 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_U5CON0 2F7 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_U5CON1 2F8 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_U5FIFO 2FC 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_C1INTHbits 11D 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_C1INTTbits 11F 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+isa$xinst 0 0 ABS 0 - C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+_C1FIFOBA 14C 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/debug\BRT_monitoring.debug.o
+__Hbank6 0 0 ABS 0 bank6 dist/default/debug\BRT_monitoring.debug.o
+__Hbank7 0 0 ABS 0 bank7 dist/default/debug\BRT_monitoring.debug.o
+__Hbank8 0 0 ABS 0 bank8 dist/default/debug\BRT_monitoring.debug.o
+__Hbank9 0 0 ABS 0 bank9 dist/default/debug\BRT_monitoring.debug.o
+__Hcinit 0 0 ABS 0 cinit dist/default/debug\BRT_monitoring.debug.o
+__Hconst 0 0 CONST 0 const dist/default/debug\BRT_monitoring.debug.o
+__Hidata 0 0 CODE 0 idata dist/default/debug\BRT_monitoring.debug.o
+__Hidloc 0 0 ABS 0 idloc dist/default/debug\BRT_monitoring.debug.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/debug\BRT_monitoring.debug.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/debug\BRT_monitoring.debug.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/debug\BRT_monitoring.debug.o
+__Hstack 0 0 STACK 2 stack dist/default/debug\BRT_monitoring.debug.o
+__Htext0 0 0 ABS 0 text0 dist/default/debug\BRT_monitoring.debug.o
+__Htext1 0 0 ABS 0 text1 dist/default/debug\BRT_monitoring.debug.o
+__Htext2 0 0 ABS 0 text2 dist/default/debug\BRT_monitoring.debug.o
+__Htext3 0 0 ABS 0 text3 dist/default/debug\BRT_monitoring.debug.o
+__Htext4 0 0 ABS 0 text4 dist/default/debug\BRT_monitoring.debug.o
+__Htext5 0 0 ABS 0 text5 dist/default/debug\BRT_monitoring.debug.o
+__Htext6 0 0 ABS 0 text6 dist/default/debug\BRT_monitoring.debug.o
+__Htext7 0 0 ABS 0 text7 dist/default/debug\BRT_monitoring.debug.o
+__Htext8 0 0 ABS 0 text8 dist/default/debug\BRT_monitoring.debug.o
+__Htext9 0 0 ABS 0 text9 dist/default/debug\BRT_monitoring.debug.o
+__Hbank10 0 0 ABS 0 bank10 dist/default/debug\BRT_monitoring.debug.o
+__Hbank11 0 0 ABS 0 bank11 dist/default/debug\BRT_monitoring.debug.o
+__Hbank12 0 0 ABS 0 bank12 dist/default/debug\BRT_monitoring.debug.o
+__Hbank13 0 0 ABS 0 bank13 dist/default/debug\BRT_monitoring.debug.o
+__Hbank14 0 0 ABS 0 bank14 dist/default/debug\BRT_monitoring.debug.o
+__Hbank15 0 0 ABS 0 bank15 dist/default/debug\BRT_monitoring.debug.o
+__Hbank16 0 0 ABS 0 bank16 dist/default/debug\BRT_monitoring.debug.o
+__Hbank17 0 0 ABS 0 bank17 dist/default/debug\BRT_monitoring.debug.o
+__Hbank18 0 0 ABS 0 bank18 dist/default/debug\BRT_monitoring.debug.o
+__Hbank19 0 0 ABS 0 bank19 dist/default/debug\BRT_monitoring.debug.o
+__Hbank20 0 0 ABS 0 bank20 dist/default/debug\BRT_monitoring.debug.o
+__Hbank21 0 0 ABS 0 bank21 dist/default/debug\BRT_monitoring.debug.o
+__Hbank22 0 0 ABS 0 bank22 dist/default/debug\BRT_monitoring.debug.o
+__Hbank23 0 0 ABS 0 bank23 dist/default/debug\BRT_monitoring.debug.o
+__Hbank24 0 0 ABS 0 bank24 dist/default/debug\BRT_monitoring.debug.o
+__Hbank25 0 0 ABS 0 bank25 dist/default/debug\BRT_monitoring.debug.o
+__Hbank26 0 0 ABS 0 bank26 dist/default/debug\BRT_monitoring.debug.o
+__Hbank27 0 0 ABS 0 bank27 dist/default/debug\BRT_monitoring.debug.o
+__Hbank28 0 0 ABS 0 bank28 dist/default/debug\BRT_monitoring.debug.o
+__Hbank29 0 0 ABS 0 bank29 dist/default/debug\BRT_monitoring.debug.o
+__Hbank30 0 0 ABS 0 bank30 dist/default/debug\BRT_monitoring.debug.o
+__Hbank31 0 0 ABS 0 bank31 dist/default/debug\BRT_monitoring.debug.o
+__Hbank32 0 0 ABS 0 bank32 dist/default/debug\BRT_monitoring.debug.o
+__Hbank33 0 0 ABS 0 bank33 dist/default/debug\BRT_monitoring.debug.o
+__Hbank34 0 0 ABS 0 bank34 dist/default/debug\BRT_monitoring.debug.o
+__Hbank35 0 0 ABS 0 bank35 dist/default/debug\BRT_monitoring.debug.o
+__Hbank36 0 0 ABS 0 bank36 dist/default/debug\BRT_monitoring.debug.o
+__Hbank37 0 0 ABS 0 bank37 dist/default/debug\BRT_monitoring.debug.o
+__Hbank38 0 0 ABS 0 bank38 dist/default/debug\BRT_monitoring.debug.o
+__Hbank39 0 0 ABS 0 bank39 dist/default/debug\BRT_monitoring.debug.o
+__Hbank40 0 0 ABS 0 bank40 dist/default/debug\BRT_monitoring.debug.o
+__Hbank41 0 0 ABS 0 bank41 dist/default/debug\BRT_monitoring.debug.o
+__Hbank42 0 0 ABS 0 bank42 dist/default/debug\BRT_monitoring.debug.o
+__Hbank43 0 0 ABS 0 bank43 dist/default/debug\BRT_monitoring.debug.o
+__Hbank44 0 0 ABS 0 bank44 dist/default/debug\BRT_monitoring.debug.o
+__Hbank45 0 0 ABS 0 bank45 dist/default/debug\BRT_monitoring.debug.o
+__Hbank46 0 0 ABS 0 bank46 dist/default/debug\BRT_monitoring.debug.o
+__Hbank47 0 0 ABS 0 bank47 dist/default/debug\BRT_monitoring.debug.o
+__Hbank48 0 0 ABS 0 bank48 dist/default/debug\BRT_monitoring.debug.o
+__Hbank49 0 0 ABS 0 bank49 dist/default/debug\BRT_monitoring.debug.o
+__Hbank50 0 0 ABS 0 bank50 dist/default/debug\BRT_monitoring.debug.o
+__Hbank51 0 0 ABS 0 bank51 dist/default/debug\BRT_monitoring.debug.o
+__Hbank52 0 0 ABS 0 bank52 dist/default/debug\BRT_monitoring.debug.o
+__Hbank53 0 0 ABS 0 bank53 dist/default/debug\BRT_monitoring.debug.o
+__Hbank54 0 0 ABS 0 bank54 dist/default/debug\BRT_monitoring.debug.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\BRT_monitoring.debug.o
+__Hbigram 0 0 ABS 0 bigram dist/default/debug\BRT_monitoring.debug.o
+__Hbigsfr 0 0 ABS 0 bigsfr dist/default/debug\BRT_monitoring.debug.o
+__smallconst 3700 0 SMALLCONST 0 smallconst C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+_transmit 39DA 0 CODE 0 text9 dist/default/debug\BRT_monitoring.debug.o
+SIMCardExists@command 53E 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__Hcomram 0 0 ABS 0 comram dist/default/debug\BRT_monitoring.debug.o
+__Hconfig 30001F 0 CONFIG 4 config dist/default/debug\BRT_monitoring.debug.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/debug\BRT_monitoring.debug.o
+__Lbank6 0 0 ABS 0 bank6 dist/default/debug\BRT_monitoring.debug.o
+__Lbank7 0 0 ABS 0 bank7 dist/default/debug\BRT_monitoring.debug.o
+__Lbank8 0 0 ABS 0 bank8 dist/default/debug\BRT_monitoring.debug.o
+__Lbank9 0 0 ABS 0 bank9 dist/default/debug\BRT_monitoring.debug.o
+__Lcinit 0 0 ABS 0 cinit dist/default/debug\BRT_monitoring.debug.o
+__Lconst 0 0 CONST 0 const dist/default/debug\BRT_monitoring.debug.o
+__Lidata 0 0 CODE 0 idata dist/default/debug\BRT_monitoring.debug.o
+__Lidloc 0 0 ABS 0 idloc dist/default/debug\BRT_monitoring.debug.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/debug\BRT_monitoring.debug.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/debug\BRT_monitoring.debug.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/debug\BRT_monitoring.debug.o
+__Lstack 0 0 STACK 2 stack dist/default/debug\BRT_monitoring.debug.o
+__Ltext0 0 0 ABS 0 text0 dist/default/debug\BRT_monitoring.debug.o
+__Ltext1 0 0 ABS 0 text1 dist/default/debug\BRT_monitoring.debug.o
+__Ltext2 0 0 ABS 0 text2 dist/default/debug\BRT_monitoring.debug.o
+__Ltext3 0 0 ABS 0 text3 dist/default/debug\BRT_monitoring.debug.o
+__Ltext4 0 0 ABS 0 text4 dist/default/debug\BRT_monitoring.debug.o
+__Ltext5 0 0 ABS 0 text5 dist/default/debug\BRT_monitoring.debug.o
+__Ltext6 0 0 ABS 0 text6 dist/default/debug\BRT_monitoring.debug.o
+__Ltext7 0 0 ABS 0 text7 dist/default/debug\BRT_monitoring.debug.o
+__Ltext8 0 0 ABS 0 text8 dist/default/debug\BRT_monitoring.debug.o
+__Ltext9 0 0 ABS 0 text9 dist/default/debug\BRT_monitoring.debug.o
+__end_of_transmit 39F2 0 CODE 0 text9 dist/default/debug\BRT_monitoring.debug.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/debug\BRT_monitoring.debug.o
+__Habs1 0 0 ABS 0 abs1 dist/default/debug\BRT_monitoring.debug.o
+__Hdata 0 0 ABS 0 data dist/default/debug\BRT_monitoring.debug.o
+__Hheap 0 0 HEAP 7 heap dist/default/debug\BRT_monitoring.debug.o
+__Hinit 1E 0 CODE 0 init dist/default/debug\BRT_monitoring.debug.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/debug\BRT_monitoring.debug.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/debug\BRT_monitoring.debug.o
+__Htemp 0 0 COMRAM 1 temp dist/default/debug\BRT_monitoring.debug.o
+__Htext 0 0 ABS 0 text dist/default/debug\BRT_monitoring.debug.o
+__Labs1 0 0 ABS 0 abs1 dist/default/debug\BRT_monitoring.debug.o
+__Ldata 0 0 ABS 0 data dist/default/debug\BRT_monitoring.debug.o
+__Lheap 0 0 HEAP 7 heap dist/default/debug\BRT_monitoring.debug.o
+__Linit 1A 0 CODE 0 init dist/default/debug\BRT_monitoring.debug.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/debug\BRT_monitoring.debug.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/debug\BRT_monitoring.debug.o
+__Ltemp 0 0 COMRAM 1 temp dist/default/debug\BRT_monitoring.debug.o
+__Ltext 0 0 ABS 0 text dist/default/debug\BRT_monitoring.debug.o
+_C1TRECUbits 136 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__Hirdata 0 0 CODE 0 irdata dist/default/debug\BRT_monitoring.debug.o
+__S0 3A1A 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__S1 553 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__S4 0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__S5 0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Hivt0x8 1A 0 CODE 0 ivt0x8 dist/default/debug\BRT_monitoring.debug.o
+bufferCommand@bLength 512 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+_C1NBTCFGH 105 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_C1NBTCFGL 104 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_C1NBTCFGT 107 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_C1NBTCFGU 106 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+IVTBASEH 45E 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+IVTBASEL 45D 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+IVTBASEU 45F 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+read@buffer 503 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+_C1TXQCONL 150 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+checkCommand@i 53C 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+_SPI1BAUD 89 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SPI1CON0 84 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SPI1CON1 85 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SPI1CON2 86 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__pivt0x8 8 0 CODE 0 ivt0x8 dist/default/debug\BRT_monitoring.debug.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\BRT_monitoring.debug.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\BRT_monitoring.debug.o
+__end_of_printLn 39DA 0 CODE 0 text7 dist/default/debug\BRT_monitoring.debug.o
+__Hramtop 3700 0 RAM 0 ramtop dist/default/debug\BRT_monitoring.debug.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/debug\BRT_monitoring.debug.o
+_checkCommand 37E2 0 CODE 0 text4 dist/default/debug\BRT_monitoring.debug.o
+__activetblptr 3 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/debug\BRT_monitoring.debug.o
+__Htext10 0 0 ABS 0 text10 dist/default/debug\BRT_monitoring.debug.o
+__Htext11 0 0 ABS 0 text11 dist/default/debug\BRT_monitoring.debug.o
+__Htext12 0 0 ABS 0 text12 dist/default/debug\BRT_monitoring.debug.o
+__Htext13 0 0 ABS 0 text13 dist/default/debug\BRT_monitoring.debug.o
+__Htext14 0 0 ABS 0 text14 dist/default/debug\BRT_monitoring.debug.o
+__Htext15 0 0 ABS 0 text15 dist/default/debug\BRT_monitoring.debug.o
+__Htext16 0 0 ABS 0 text16 dist/default/debug\BRT_monitoring.debug.o
+_INTERRUPT_InterruptManager 3722 0 CODE 0 text12 dist/default/debug\BRT_monitoring.debug.o
+_PIE3bits 4A1 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__ptext10 3A08 0 CODE 0 text10 dist/default/debug\BRT_monitoring.debug.o
+__ptext11 39F2 0 CODE 0 text11 dist/default/debug\BRT_monitoring.debug.o
+__ptext12 3722 0 CODE 0 text12 dist/default/debug\BRT_monitoring.debug.o
+__ptext13 3A14 0 CODE 0 text13 dist/default/debug\BRT_monitoring.debug.o
+__ptext14 3A16 0 CODE 0 text14 dist/default/debug\BRT_monitoring.debug.o
+__ptext15 3A18 0 CODE 0 text15 dist/default/debug\BRT_monitoring.debug.o
+__ptext16 0 0 CODE 0 text16 dist/default/debug\BRT_monitoring.debug.o
+__Lbank10 0 0 ABS 0 bank10 dist/default/debug\BRT_monitoring.debug.o
+__Lbank11 0 0 ABS 0 bank11 dist/default/debug\BRT_monitoring.debug.o
+__Lbank12 0 0 ABS 0 bank12 dist/default/debug\BRT_monitoring.debug.o
+__Lbank13 0 0 ABS 0 bank13 dist/default/debug\BRT_monitoring.debug.o
+__Lbank14 0 0 ABS 0 bank14 dist/default/debug\BRT_monitoring.debug.o
+__Lbank15 0 0 ABS 0 bank15 dist/default/debug\BRT_monitoring.debug.o
+__Lbank16 0 0 ABS 0 bank16 dist/default/debug\BRT_monitoring.debug.o
+__Lbank17 0 0 ABS 0 bank17 dist/default/debug\BRT_monitoring.debug.o
+__Lbank18 0 0 ABS 0 bank18 dist/default/debug\BRT_monitoring.debug.o
+__Lbank19 0 0 ABS 0 bank19 dist/default/debug\BRT_monitoring.debug.o
+__Lbank20 0 0 ABS 0 bank20 dist/default/debug\BRT_monitoring.debug.o
+__Lbank21 0 0 ABS 0 bank21 dist/default/debug\BRT_monitoring.debug.o
+__Lbank22 0 0 ABS 0 bank22 dist/default/debug\BRT_monitoring.debug.o
+__Lbank23 0 0 ABS 0 bank23 dist/default/debug\BRT_monitoring.debug.o
+__Lbank24 0 0 ABS 0 bank24 dist/default/debug\BRT_monitoring.debug.o
+__Lbank25 0 0 ABS 0 bank25 dist/default/debug\BRT_monitoring.debug.o
+__Lbank26 0 0 ABS 0 bank26 dist/default/debug\BRT_monitoring.debug.o
+__Lbank27 0 0 ABS 0 bank27 dist/default/debug\BRT_monitoring.debug.o
+__Lbank28 0 0 ABS 0 bank28 dist/default/debug\BRT_monitoring.debug.o
+__Lbank29 0 0 ABS 0 bank29 dist/default/debug\BRT_monitoring.debug.o
+__Lbank30 0 0 ABS 0 bank30 dist/default/debug\BRT_monitoring.debug.o
+__Lbank31 0 0 ABS 0 bank31 dist/default/debug\BRT_monitoring.debug.o
+__Lbank32 0 0 ABS 0 bank32 dist/default/debug\BRT_monitoring.debug.o
+__Lbank33 0 0 ABS 0 bank33 dist/default/debug\BRT_monitoring.debug.o
+__Lbank34 0 0 ABS 0 bank34 dist/default/debug\BRT_monitoring.debug.o
+__Lbank35 0 0 ABS 0 bank35 dist/default/debug\BRT_monitoring.debug.o
+__Lbank36 0 0 ABS 0 bank36 dist/default/debug\BRT_monitoring.debug.o
+__Lbank37 0 0 ABS 0 bank37 dist/default/debug\BRT_monitoring.debug.o
+__Lbank38 0 0 ABS 0 bank38 dist/default/debug\BRT_monitoring.debug.o
+__Lbank39 0 0 ABS 0 bank39 dist/default/debug\BRT_monitoring.debug.o
+__Lbank40 0 0 ABS 0 bank40 dist/default/debug\BRT_monitoring.debug.o
+__Lbank41 0 0 ABS 0 bank41 dist/default/debug\BRT_monitoring.debug.o
+__Lbank42 0 0 ABS 0 bank42 dist/default/debug\BRT_monitoring.debug.o
+__Lbank43 0 0 ABS 0 bank43 dist/default/debug\BRT_monitoring.debug.o
+__Lbank44 0 0 ABS 0 bank44 dist/default/debug\BRT_monitoring.debug.o
+__Lbank45 0 0 ABS 0 bank45 dist/default/debug\BRT_monitoring.debug.o
+__Lbank46 0 0 ABS 0 bank46 dist/default/debug\BRT_monitoring.debug.o
+__Lbank47 0 0 ABS 0 bank47 dist/default/debug\BRT_monitoring.debug.o
+__Lbank48 0 0 ABS 0 bank48 dist/default/debug\BRT_monitoring.debug.o
+__Lbank49 0 0 ABS 0 bank49 dist/default/debug\BRT_monitoring.debug.o
+__Lbank50 0 0 ABS 0 bank50 dist/default/debug\BRT_monitoring.debug.o
+__Lbank51 0 0 ABS 0 bank51 dist/default/debug\BRT_monitoring.debug.o
+__Lbank52 0 0 ABS 0 bank52 dist/default/debug\BRT_monitoring.debug.o
+__Lbank53 0 0 ABS 0 bank53 dist/default/debug\BRT_monitoring.debug.o
+__Lbank54 0 0 ABS 0 bank54 dist/default/debug\BRT_monitoring.debug.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\BRT_monitoring.debug.o
+__Lbigram 0 0 ABS 0 bigram dist/default/debug\BRT_monitoring.debug.o
+__Lbigsfr 0 0 ABS 0 bigsfr dist/default/debug\BRT_monitoring.debug.o
+__Lcomram 0 0 ABS 0 comram dist/default/debug\BRT_monitoring.debug.o
+__Lconfig 0 0 CONFIG 4 config dist/default/debug\BRT_monitoring.debug.o
+_SPI1_DefaultHandler 3A18 0 CODE 0 text15 dist/default/debug\BRT_monitoring.debug.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\BRT_monitoring.debug.o
+___inthi_stack_hi 0 0 STACK 2 stack C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+___inthi_stack_lo 0 0 STACK 2 stack C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/debug\BRT_monitoring.debug.o
+isa$std 1 0 ABS 0 - C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+stackhi 0 0 ABS 0 - C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+stacklo 0 0 ABS 0 - C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+_OSCCON1 AD 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_OSCCON3 AF 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_OSCTUNE B0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Lirdata 0 0 CODE 0 irdata dist/default/debug\BRT_monitoring.debug.o
+__Livt0x8 8 0 CODE 0 ivt0x8 dist/default/debug\BRT_monitoring.debug.o
+__Lspace_0 0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Lspace_1 0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Lspace_2 0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Lspace_4 0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__pbssCOMRAM 54A 0 COMRAM 1 bssCOMRAM dist/default/debug\BRT_monitoring.debug.o
+_PIR3bits 4B1 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__end_of_SPI1_DefaultTxHandler 3A16 0 CODE 0 text13 dist/default/debug\BRT_monitoring.debug.o
+__end_of_checkCommand 386C 0 CODE 0 text4 dist/default/debug\BRT_monitoring.debug.o
+_SPI1TCNTL 82 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+end_of_initialization 39B6 0 CODE 0 cinit dist/default/debug\BRT_monitoring.debug.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\BRT_monitoring.debug.o
+__Hreset_vec 4 0 CODE 0 reset_vec dist/default/debug\BRT_monitoring.debug.o
+print@i 508 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__end_of_DLC_BYTES 370A 0 SMALLCONST 0 smallconst dist/default/debug\BRT_monitoring.debug.o
+_setupSIM 38BC 0 CODE 0 text1 dist/default/debug\BRT_monitoring.debug.o
+__Lramtop 3700 0 RAM 0 ramtop dist/default/debug\BRT_monitoring.debug.o
+checkCommand@tLength 515 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/debug\BRT_monitoring.debug.o
+__pcinit 399C 0 CODE 0 cinit dist/default/debug\BRT_monitoring.debug.o
+__ptext0 386C 0 CODE 0 text0 dist/default/debug\BRT_monitoring.debug.o
+__ptext1 38BC 0 CODE 0 text1 dist/default/debug\BRT_monitoring.debug.o
+__ptext2 3A0E 0 CODE 0 text2 dist/default/debug\BRT_monitoring.debug.o
+__ptext3 3950 0 CODE 0 text3 dist/default/debug\BRT_monitoring.debug.o
+__ptext4 37E2 0 CODE 0 text4 dist/default/debug\BRT_monitoring.debug.o
+__ptext5 3976 0 CODE 0 text5 dist/default/debug\BRT_monitoring.debug.o
+__ptext6 3A12 0 CODE 0 text6 dist/default/debug\BRT_monitoring.debug.o
+__ptext7 39BC 0 CODE 0 text7 dist/default/debug\BRT_monitoring.debug.o
+__ptext8 3906 0 CODE 0 text8 dist/default/debug\BRT_monitoring.debug.o
+__ptext9 39DA 0 CODE 0 text9 dist/default/debug\BRT_monitoring.debug.o
+_SPI1_DefaultTxHandler 3A14 0 CODE 0 text13 dist/default/debug\BRT_monitoring.debug.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/debug\BRT_monitoring.debug.o
+__Ltext10 0 0 ABS 0 text10 dist/default/debug\BRT_monitoring.debug.o
+__Ltext11 0 0 ABS 0 text11 dist/default/debug\BRT_monitoring.debug.o
+__Ltext12 0 0 ABS 0 text12 dist/default/debug\BRT_monitoring.debug.o
+__Ltext13 0 0 ABS 0 text13 dist/default/debug\BRT_monitoring.debug.o
+__Ltext14 0 0 ABS 0 text14 dist/default/debug\BRT_monitoring.debug.o
+__Ltext15 0 0 ABS 0 text15 dist/default/debug\BRT_monitoring.debug.o
+__Ltext16 0 0 ABS 0 text16 dist/default/debug\BRT_monitoring.debug.o
+__ramtop 3700 0 RAM 0 ramtop C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+__end_of_setupSIM 3906 0 CODE 0 text1 dist/default/debug\BRT_monitoring.debug.o
+__Lpowerup 0 0 CODE 0 powerup dist/default/debug\BRT_monitoring.debug.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\BRT_monitoring.debug.o
+__H__absolute__ 0 0 ABS 0 __absolute__ dist/default/debug\BRT_monitoring.debug.o
+checkCommand@buffer 51C 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__psmallconst 3700 0 SMALLCONST 0 smallconst dist/default/debug\BRT_monitoring.debug.o
+__end_of_SPI1_DefaultRxHandler 3A18 0 CODE 0 text14 dist/default/debug\BRT_monitoring.debug.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\BRT_monitoring.debug.o
+_SLRCONA 403 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SLRCONB 40B 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SLRCONC 413 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SLRCOND 41B 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SLRCONE 423 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+___heap_hi 0 0 ABS 0 - C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+___heap_lo 0 0 ABS 0 - C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+___param_bank 0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+___intlo_stack_hi 0 0 STACK 2 stack C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+___intlo_stack_lo 0 0 STACK 2 stack C:\Users\casbo\AppData\Local\Temp\xcAskr8.\driver_tmp_9.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\BRT_monitoring.debug.o
+__end_of__initialization 39B6 0 CODE 0 cinit dist/default/debug\BRT_monitoring.debug.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/debug\BRT_monitoring.debug.o
+__end_of_SPI1_DefaultHandler 3A1A 0 CODE 0 text15 dist/default/debug\BRT_monitoring.debug.o
+_SPI1_InterruptHandler 550 0 COMRAM 1 bssCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/debug\BRT_monitoring.debug.o
+_SPI1CLK 8C 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SPI1RXB 80 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SPI1TXB 81 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_SPI1_DefaultRxHandler 3A16 0 CODE 0 text14 dist/default/debug\BRT_monitoring.debug.o
+__pcstackCOMRAM 501 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+printLn@length 50B 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+_bufferCommand 3976 0 CODE 0 text5 dist/default/debug\BRT_monitoring.debug.o
+_printLn 39BC 0 CODE 0 text7 dist/default/debug\BRT_monitoring.debug.o
+bufferCommand@tLength 50E 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__end_of_FIFO 3711 0 SMALLCONST 0 smallconst dist/default/debug\BRT_monitoring.debug.o
+__end_of_main 38BC 0 CODE 0 text0 dist/default/debug\BRT_monitoring.debug.o
+__end_of_read 3A14 0 CODE 0 text6 dist/default/debug\BRT_monitoring.debug.o
+_OSCEN B3 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_PORTB 4CF 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_TRISA 4C6 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_TRISB 4C7 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_TRISC 4C8 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_TRISD 4C9 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_TRISE 4CA 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_U5BRG 2FA 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+_U5TXB 2EF 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__end_of_print 3950 0 CODE 0 text8 dist/default/debug\BRT_monitoring.debug.o
+__HRAM 0 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Hbss 0 0 RAM 1 bss dist/default/debug\BRT_monitoring.debug.o
+__Hram 0 0 ABS 0 ram dist/default/debug\BRT_monitoring.debug.o
+__Hsfr 0 0 ABS 0 sfr dist/default/debug\BRT_monitoring.debug.o
+__LRAM 1 0 ABS 0 - dist/default/debug\BRT_monitoring.debug.o
+__Lbss 0 0 RAM 1 bss dist/default/debug\BRT_monitoring.debug.o
+__Lram 0 0 ABS 0 ram dist/default/debug\BRT_monitoring.debug.o
+__Lsfr 0 0 ABS 0 sfr dist/default/debug\BRT_monitoring.debug.o
+_print 3906 0 CODE 0 text8 dist/default/debug\BRT_monitoring.debug.o
+__end_of_updateCoordinates 3A12 0 CODE 0 text2 dist/default/debug\BRT_monitoring.debug.o
+printLn@string 50A 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+__initialization 399C 0 CODE 0 cinit dist/default/debug\BRT_monitoring.debug.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/debug\BRT_monitoring.debug.o
+__Hsmallconst 3722 0 SMALLCONST 0 smallconst dist/default/debug\BRT_monitoring.debug.o
+checkCommand@command 514 0 COMRAM 1 cstackCOMRAM dist/default/debug\BRT_monitoring.debug.o
+_SIMCardExists 3950 0 CODE 0 text3 dist/default/debug\BRT_monitoring.debug.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/debug\BRT_monitoring.debug.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\BRT_monitoring.debug.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+ivt0x8 0 8 8 16 1
+text12 0 3722 3722 2F8 1
+cstackCOMRAM 1 501 501 52 1
+reset_vec 0 0 0 4 1
+smallconst 0 3700 3700 22 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
