@@ -6,6 +6,7 @@
  */
 
 #include "constants.h"
+#include "uart.h"
 #ifndef SIM_H
 #define	SIM_H
 
@@ -13,6 +14,12 @@
 extern "C" {
 #endif
 
+bool sendCommand(char* command, int length){
+    char buffer[32];
+    printLn(command, length);
+    read(&buffer, sizeof(buffer)/sizeof(char));
+    return (buffer[0]=='O' && buffer[1]=='K'); //returns true if OK, otherwise returns false;
+}
 
 struct SIM{
     uint8_t card;

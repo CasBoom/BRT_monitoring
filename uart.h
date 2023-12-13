@@ -41,5 +41,12 @@ void printLn(char* string, int length){
     transmit('\r');
 }
 
+void read(char* buffer, int buffer_size){
+    while(0){ //while last char not endline
+    //wait till bit available
+    //add bit to buffer
+    }
+}
+
 #endif	/* UART_H */
 
