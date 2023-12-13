@@ -13,30 +13,28 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+    
+//sends response to buffer for more involved response flows
+void bufferCommand(char* command, int tLength, char* buffer, int bLength){
+    printLn(command, tLength);
+    read(&buffer, sizeof(buffer)/sizeof(char));
+}
 
 // send a simple AT command
 bool sendCommand(char* command, int length){
     char buffer[32];
-    printLn(command, length);
-    read(&buffer, sizeof(buffer)/sizeof(char));
+    bufferCommand(command, length, buffer[32], sizeof(buffer)/sizeof(char));
     return (buffer[0]=='O' && buffer[1]=='K'); //returns true if OK, otherwise returns false;
 }
 
 // send AT command with non-standard expected response
 bool sendCommand(char* command, int tLength, char* response, int rLength){
     char buffer[32];
-    printLn(command, tLength);
-    read(&buffer, sizeof(buffer)/sizeof(char));
+    bufferCommand(command, tLength, buffer[32], sizeof(buffer)/sizeof(char));
     for(int i=0; i<rLength; i++){
         if(response+i != buffer+i)return false;
     }
     return true;
-}
-
-//sends response to buffer for more involved response flows
-void bufferCommand(char* command, int tLength, char* buffer, int bLength){
-    printLn(command, tLength);
-    read(&buffer, sizeof(buffer)/sizeof(char));
 }
 
 struct SIM{
@@ -51,7 +49,7 @@ uint8_t SIMCardExists(){
     // check if simcard exists
     // return 1 if it does
     // return 0 if not
-    char* command="AT+CDIN=?";
+    char* command="AT+CPIN=?";
     char* response="READY";
     return sendCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
 }
