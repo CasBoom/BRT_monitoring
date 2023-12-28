@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F23348 `(v ~T0 @X0 0 tf ]
-[v F23354 `(v ~T0 @X0 0 tf ]
-[v F23360 `(v ~T0 @X0 0 tf ]
+[v F23332 `(v ~T0 @X0 0 tf ]
+[v F23338 `(v ~T0 @X0 0 tf ]
+[v F23344 `(v ~T0 @X0 0 tf ]
 "36389 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 36389: extern volatile unsigned short U5BRG __attribute__((address(0x2FA)));
 [v _U5BRG `Vus ~T0 @X0 0 e@762 ]
@@ -53,9 +53,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ANSELB `Vuc ~T0 @X0 0 e@1032 ]
 "3902
 [v _TRISB `Vuc ~T0 @X0 0 e@1223 ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.45\pic\include\builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:\Program Files\Microchip\xc8\v2.36\pic\include\builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
 [p i __delay ]
 "362 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 362: __asm("BOOTREG equ 038h");
@@ -3656,13 +3656,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 04FFh ;# ">
 "75 ./mcc_generated_files/spi1.h
 [; ;./mcc_generated_files/spi1.h: 75: void (*SPI1_InterruptHandler)(void);
-[v _SPI1_InterruptHandler `*F23348 ~T0 @X0 1 e ]
+[v _SPI1_InterruptHandler `*F23332 ~T0 @X0 1 e ]
 "77
 [; ;./mcc_generated_files/spi1.h: 77: void (*SPI1_RxInterruptHandler)(void);
-[v _SPI1_RxInterruptHandler `*F23354 ~T0 @X0 1 e ]
+[v _SPI1_RxInterruptHandler `*F23338 ~T0 @X0 1 e ]
 "79
 [; ;./mcc_generated_files/spi1.h: 79: void (*SPI1_TxInterruptHandler)(void);
-[v _SPI1_TxInterruptHandler `*F23360 ~T0 @X0 1 e ]
+[v _SPI1_TxInterruptHandler `*F23344 ~T0 @X0 1 e ]
 "18 ./uart.h
 [; ;./uart.h: 18: static void setupUART(){
 [v _setupUART `(v ~T0 @X0 1 sf ]
@@ -3984,69 +3984,77 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 43: }
 [e :UE 3312 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
 "45
-[; ;main.c: 45: void main(void)
+[; ;main.c: 45: struct SIM sim;
+[v _sim `S3304 ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"47
+[; ;main.c: 47: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"46
-[; ;main.c: 46: {
+"48
+[; ;main.c: 48: {
 {
 [e :U _main ]
 [f ]
-"47
-[; ;main.c: 47:     OSCFRQ |= 0x07;
-[e =| _OSCFRQ -> -> 7 `i `Vuc ]
 "49
-[; ;main.c: 49:     OSCCON1 = 0b01100001;
+[; ;main.c: 49:     OSCFRQ |= 0x07;
+[e =| _OSCFRQ -> -> 7 `i `Vuc ]
+"51
+[; ;main.c: 51:     OSCCON1 = 0b01100001;
 [e = _OSCCON1 -> -> 97 `i `uc ]
-"53
-[; ;main.c: 53:     struct SIM sim;
-[v _sim `S3304 ~T0 @X0 1 a ]
 "55
-[; ;main.c: 55:     setupRegs();
+[; ;main.c: 55:     struct SIM sim;
+[v _sim `S3304 ~T0 @X0 1 a ]
+"57
+[; ;main.c: 57:     setupRegs();
 [e ( _setupRegs ..  ]
-"56
-[; ;main.c: 56:     setupSIM(&sim);
+"58
+[; ;main.c: 58:     setupSIM(&sim);
 [e ( _setupSIM (1 &U _sim ]
-"61
-[; ;main.c: 61:     (INTCON0bits.GIE = 0);
-[e = . . _INTCON0bits 0 6 -> -> 0 `i `uc ]
 "63
-[; ;main.c: 63:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"64
-[; ;main.c: 64:     LATB = 0x00;
-[e = _LATB -> -> 0 `i `uc ]
+[; ;main.c: 63:     (INTCON0bits.GIE = 0);
+[e = . . _INTCON0bits 0 6 -> -> 0 `i `uc ]
 "65
-[; ;main.c: 65:     ANSELB = 0x00;
-[e = _ANSELB -> -> 0 `i `uc ]
+[; ;main.c: 65:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
 "66
-[; ;main.c: 66:     TRISB = 0x00;
+[; ;main.c: 66:     LATB = 0x00;
+[e = _LATB -> -> 0 `i `uc ]
+"67
+[; ;main.c: 67:     ANSELB = 0x00;
+[e = _ANSELB -> -> 0 `i `uc ]
+"68
+[; ;main.c: 68:     TRISB = 0x00;
 [e = _TRISB -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:     while (1)
+"71
+[; ;main.c: 71:     while (1)
 [e :U 3315 ]
-"70
-[; ;main.c: 70:     {
+"72
+[; ;main.c: 72:     {
 {
-"73
-[; ;main.c: 73:         transmit(('A'));
-[e ( _transmit (1 -> -> 65 `ui `uc ]
 "75
-[; ;main.c: 75:         LATB ^= 0x0020;
-[e =^ _LATB -> -> 32 `i `Vuc ]
+[; ;main.c: 75:         char* command="AT";
+[v _command `*uc ~T0 @X0 1 a ]
+[e = _command :s 3C ]
 "76
-[; ;main.c: 76:         _delay((unsigned long)((100)*(1000000/4000.0)));
+[; ;main.c: 76:         sendCommand(command, sizeof(command)/sizeof(char));
+[e ( _sendCommand (2 , _command -> / -> # _command `ui -> # `uc `ui `i ]
+"78
+[; ;main.c: 78:         LATB ^= 0x0020;
+[e =^ _LATB -> -> 32 `i `Vuc ]
+"79
+[; ;main.c: 79:         _delay((unsigned long)((100)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"77
-[; ;main.c: 77:     }
+"80
+[; ;main.c: 80:     }
 }
 [e :U 3314 ]
 [e $U 3315  ]
 [e :U 3316 ]
-"78
-[; ;main.c: 78: }
+"81
+[; ;main.c: 81: }
 [e :UE 3313 ]
 }
 [a 2C 82 69 65 68 89 0 ]
+[a 3C 65 84 0 ]
 [a 1C 65 84 43 67 80 73 78 61 63 0 ]

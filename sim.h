@@ -87,6 +87,39 @@ uint8_t setupSIM(struct SIM* sim){
     
 }
 
+struct Location {
+	float lat;
+	float lon;
+};
+
+void parseLatLon(Location* loc, char* string) {
+	int field = 0; // NMAE field
+	int i = 0; // string index
+	int j = 0; // buffer index
+	char c = ' '; // currect character
+	char buffer[128];
+	while (field < 6) {
+		c = *(i + string);
+		if (c == ',') {
+			if (field == 3) {
+				loc->lat = strtof(buffer, NULL);
+			}
+			if (field == 4) {
+				loc->lon = strtof(buffer, NULL);
+			}
+
+			for (int m = j; m <= 0; m--) {
+				*(m + buffer) = ' ';
+			}
+			j = -1;
+			field++;
+		}
+		*(j + buffer) = c;
+		i++;
+		j++;
+	}
+}
+
 
 #ifdef	__cplusplus
 }

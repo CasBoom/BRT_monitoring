@@ -423,7 +423,7 @@ _spi1_configuration 370A 0 SMALLCONST 0
 bufferCommand@bLength 516 0 COMRAM 1
 _setupUART 3AA8 0 CODE 0
 __smallconst 3700 0 SMALLCONST 0
-__Hreset_vec 6 0 CODE 0
+__Hreset_vec 4 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 __accesstop 560 0 ABS 0
 intlevel0 0 0 CODE 0
@@ -450,15 +450,15 @@ bufferCommand@tLength 512 0 COMRAM 1
 sendCommand@buffer 51C 0 COMRAM 1
 %segments
 ivt0x8 8 1D CODE 8 0
-reset_vec 0 5 CODE 0 0
+reset_vec 0 3 CODE 0 0
 smallconst 3700 3725 SMALLCONST 3700 0
 cstackCOMRAM 501 55D COMRAM 501 1
 bssBANK5 560 566 BANK5 560 1
 text13 3726 3ACF CODE 3726 0
 %locals
-dist/default/debug\BRT_monitoring.debug.o
+dist/default/production\BRT_monitoring.production.o
 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h
-C:\Users\casbo\AppData\Local\Temp\xcAsb9g.s
+C:\Users\casbo\AppData\Local\Temp\xcAs6tc.s
 14829 3A16 0 CODE 0
 14831 3A16 0 CODE 0
 14834 3A16 0 CODE 0

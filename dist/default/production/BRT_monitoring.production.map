@@ -3,11 +3,11 @@ Microchip MPLAB XC8 Compiler V2.36
 Linker command line:
 
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.36\pic\dat\en_msgs.txt \
-  -pivt0x8=08h -cn -h+dist/default/debug\BRT_monitoring.debug.sym \
-  --cmf=dist/default/debug\BRT_monitoring.debug.cmf -z -Q18F47Q84 \
-  -oC:\Users\casbo\AppData\Local\Temp\xcAsb9g.4 --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/debug/BRT_monitoring.debug.map \
-  --md=C:\Users\casbo\AppData\Local\Temp\xcAsb9g.dat -E1 -ver=XC8 Compiler \
+  -pivt0x8=08h -cn -h+dist/default/production\BRT_monitoring.production.sym \
+  --cmf=dist/default/production\BRT_monitoring.production.cmf -z -Q18F47Q84 \
+  -oC:\Users\casbo\AppData\Local\Temp\xcAs6tc.4 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/BRT_monitoring.production.map \
+  --md=C:\Users\casbo\AppData\Local\Temp\xcAs6tc.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
   -ASMALLCONST=03700h-037FFhx457 \
   -AMEDIUMCONST=03700h-0FFFFh,013700h-01FFFFh -ACOMRAM=0501h-055Fh \
@@ -39,8 +39,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\casbo\AppData\Local\Temp\xcAsb9g.o \
-  dist/default/debug\BRT_monitoring.debug.o 
+  C:\Users\casbo\AppData\Local\Temp\xcAs6tc.o \
+  dist/default/production\BRT_monitoring.production.o 
 
 Object code version is 3.11
 
@@ -49,11 +49,11 @@ Machine type is 18F47Q84
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\casbo\AppData\Local\Temp\xcAsb9g.o
+C:\Users\casbo\AppData\Local\Temp\xcAs6tc.o
                 config                           300000   300000       1F        0       4
                 init                                 1A       1A        4        4       0
-                reset_vec                             0        0        6        0       0
-dist/default/debug\BRT_monitoring.debug.o
+                reset_vec                             0        0        4        0       0
+dist/default/production\BRT_monitoring.production.o
                 config                           300000   300000       1F        0       4
                 smallconst                         3700     3700       26     1B80       0
                 ivt0x8                                8        8       12        4       0
@@ -82,7 +82,7 @@ dist/default/debug\BRT_monitoring.debug.o
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
                 init                                 1A       1A        4         0
-                reset_vec                             0        0        6         0
+                reset_vec                             0        0        4         0
                 ivt0x8                                8        8       12         0
                 text16                             3ACE     3ACE        2         0
                 text15                             3ACC     3ACC        2         0
@@ -242,7 +242,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
-                reset_vec                      000000  000006  000006         0       0  CODE    
+                reset_vec                      000000  000004  000004         0       0  CODE    
                 ivt0x8                         000008  000016  00001E         4       0  CODE    
                 cstackCOMRAM                   000501  00005D  00055E       501       1  COMRAM  
                 bssBANK5                       000560  000007  000567       560       1  BANK5   
@@ -307,12 +307,12 @@ UNUSED ADDRESS RANGES
                          000567-0036FF             3199
         BIGSFR           000000-0004FF              500
                          003700-003FFF              900
-        CODE             000006-000007                2
+        CODE             000004-000007                4
                          00001E-0036FF             36E2
                          003AD0-01FFFF            1C530
         COMRAM           00055E-00055F                2
         CONFIG           30001F-300023                5
-        CONST            000006-000007                2
+        CONST            000004-000007                4
                          00001E-0036FF             36E2
                          003AD0-01FFFF            1C530
         EEDATA           380000-3803FF              400
@@ -514,7 +514,7 @@ __Hramtop                           ramtop       003700
 __Hrbit                             rbit         000000
 __Hrbss                             rbss         000000
 __Hrdata                            rdata        000000
-__Hreset_vec                        reset_vec    000006
+__Hreset_vec                        reset_vec    000004
 __Hrparam                           rparam       000000
 __Hsfr                              sfr          000000
 __Hsmallconst                       smallconst   003726

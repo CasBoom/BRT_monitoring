@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F382 `(v ~T0 @X0 0 tf ]
-[v F388 `(v ~T0 @X0 0 tf ]
-[v F394 `(v ~T0 @X0 0 tf ]
+[v F379 `(v ~T0 @X0 0 tf ]
+[v F385 `(v ~T0 @X0 0 tf ]
+[v F391 `(v ~T0 @X0 0 tf ]
 "54 mcc_generated_files/spi1.c
 [; ;mcc_generated_files/spi1.c: 54: typedef struct {
 [s S3277 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
@@ -38,31 +38,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1801
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 1801: extern volatile unsigned char PMD8 __attribute__((address(0x068)));
 [v _PIE3bits `VS3094 ~T0 @X0 0 e@1185 ]
-[v F384 `(v ~T0 @X0 0 tf ]
+[v F381 `(v ~T0 @X0 0 tf ]
 "76 mcc_generated_files/spi1.h
 [; ;mcc_generated_files/spi1.h: 76: void SPI1_SetInterruptHandler(spi1InterruptHandler_t handler);
-[v _SPI1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F384 ]
+[v _SPI1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F381 ]
 "50 mcc_generated_files/spi1.c
 [; ;mcc_generated_files/spi1.c: 50: void SPI1_DefaultHandler(void);
 [v _SPI1_DefaultHandler `(v ~T0 @X0 0 ef ]
-[v F390 `(v ~T0 @X0 0 tf ]
+[v F387 `(v ~T0 @X0 0 tf ]
 "78 mcc_generated_files/spi1.h
 [; ;mcc_generated_files/spi1.h: 78: void SPI1_SetRxInterruptHandler(spi1InterruptHandler_t handler);
-[v _SPI1_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F390 ]
+[v _SPI1_SetRxInterruptHandler `(v ~T0 @X0 0 ef1`*F387 ]
 "51 mcc_generated_files/spi1.c
 [; ;mcc_generated_files/spi1.c: 51: void SPI1_DefaultRxHandler(void);
 [v _SPI1_DefaultRxHandler `(v ~T0 @X0 0 ef ]
-[v F396 `(v ~T0 @X0 0 tf ]
+[v F393 `(v ~T0 @X0 0 tf ]
 "80 mcc_generated_files/spi1.h
 [; ;mcc_generated_files/spi1.h: 80: void SPI1_SetTxInterruptHandler(spi1InterruptHandler_t handler);
-[v _SPI1_SetTxInterruptHandler `(v ~T0 @X0 0 ef1`*F396 ]
+[v _SPI1_SetTxInterruptHandler `(v ~T0 @X0 0 ef1`*F393 ]
 "52 mcc_generated_files/spi1.c
 [; ;mcc_generated_files/spi1.c: 52: void SPI1_DefaultTxHandler(void);
 [v _SPI1_DefaultTxHandler `(v ~T0 @X0 0 ef ]
 "88
 [; ;mcc_generated_files/spi1.c: 88: _Bool SPI1_Open(spi1_modes_t spi1UniqueConfiguration)
-[c E358 0 .. ]
-[n E358 . SPI1_DEFAULT  ]
+[c E355 0 .. ]
+[n E355 . SPI1_DEFAULT  ]
 "3685 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 3685:     struct {
 [s S170 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
@@ -95,21 +95,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3492
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 3492: extern volatile unsigned char SPI1RXB __attribute__((address(0x080)));
 [v _SPI1RXB `Vuc ~T0 @X0 0 e@128 ]
-[v F23313 `(v ~T0 @X0 0 tf ]
-[v F23315 `(v ~T0 @X0 0 tf ]
-[v F23319 `(v ~T0 @X0 0 tf ]
-[v F23321 `(v ~T0 @X0 0 tf ]
-[v F23325 `(v ~T0 @X0 0 tf ]
-[v F23327 `(v ~T0 @X0 0 tf ]
+[v F23297 `(v ~T0 @X0 0 tf ]
+[v F23299 `(v ~T0 @X0 0 tf ]
+[v F23303 `(v ~T0 @X0 0 tf ]
+[v F23305 `(v ~T0 @X0 0 tf ]
+[v F23309 `(v ~T0 @X0 0 tf ]
+[v F23311 `(v ~T0 @X0 0 tf ]
 "75 mcc_generated_files/spi1.h
 [; ;mcc_generated_files/spi1.h: 75: void (*SPI1_InterruptHandler)(void);
-[v _SPI1_InterruptHandler `*F382 ~T0 @X0 1 e ]
+[v _SPI1_InterruptHandler `*F379 ~T0 @X0 1 e ]
 "77
 [; ;mcc_generated_files/spi1.h: 77: void (*SPI1_RxInterruptHandler)(void);
-[v _SPI1_RxInterruptHandler `*F388 ~T0 @X0 1 e ]
+[v _SPI1_RxInterruptHandler `*F385 ~T0 @X0 1 e ]
 "79
 [; ;mcc_generated_files/spi1.h: 79: void (*SPI1_TxInterruptHandler)(void);
-[v _SPI1_TxInterruptHandler `*F394 ~T0 @X0 1 e ]
+[v _SPI1_TxInterruptHandler `*F391 ~T0 @X0 1 e ]
 "362 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 362: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3771,14 +3771,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "88
 [; ;mcc_generated_files/spi1.c: 88: _Bool SPI1_Open(spi1_modes_t spi1UniqueConfiguration)
-[v _SPI1_Open `(a ~T0 @X0 1 ef1`E358 ]
+[v _SPI1_Open `(a ~T0 @X0 1 ef1`E355 ]
 "89
 [; ;mcc_generated_files/spi1.c: 89: {
 {
 [e :U _SPI1_Open ]
 "88
 [; ;mcc_generated_files/spi1.c: 88: _Bool SPI1_Open(spi1_modes_t spi1UniqueConfiguration)
-[v _spi1UniqueConfiguration `E358 ~T0 @X0 1 r1 ]
+[v _spi1UniqueConfiguration `E355 ~T0 @X0 1 r1 ]
 "89
 [; ;mcc_generated_files/spi1.c: 89: {
 [f ]
@@ -4054,14 +4054,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "162
 [; ;mcc_generated_files/spi1.c: 162: void SPI1_SetInterruptHandler(spi1InterruptHandler_t handler)
-[v _SPI1_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F23313 ]
+[v _SPI1_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F23297 ]
 "163
 [; ;mcc_generated_files/spi1.c: 163: {
 {
 [e :U _SPI1_SetInterruptHandler ]
 "162
 [; ;mcc_generated_files/spi1.c: 162: void SPI1_SetInterruptHandler(spi1InterruptHandler_t handler)
-[v _handler `*F23315 ~T0 @X0 1 r1 ]
+[v _handler `*F23299 ~T0 @X0 1 r1 ]
 "163
 [; ;mcc_generated_files/spi1.c: 163: {
 [f ]
@@ -4086,14 +4086,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "172
 [; ;mcc_generated_files/spi1.c: 172: void SPI1_SetRxInterruptHandler(spi1InterruptHandler_t handler)
-[v _SPI1_SetRxInterruptHandler `(v ~T0 @X0 1 ef1`*F23319 ]
+[v _SPI1_SetRxInterruptHandler `(v ~T0 @X0 1 ef1`*F23303 ]
 "173
 [; ;mcc_generated_files/spi1.c: 173: {
 {
 [e :U _SPI1_SetRxInterruptHandler ]
 "172
 [; ;mcc_generated_files/spi1.c: 172: void SPI1_SetRxInterruptHandler(spi1InterruptHandler_t handler)
-[v _handler `*F23321 ~T0 @X0 1 r1 ]
+[v _handler `*F23305 ~T0 @X0 1 r1 ]
 "173
 [; ;mcc_generated_files/spi1.c: 173: {
 [f ]
@@ -4118,14 +4118,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "182
 [; ;mcc_generated_files/spi1.c: 182: void SPI1_SetTxInterruptHandler(spi1InterruptHandler_t handler)
-[v _SPI1_SetTxInterruptHandler `(v ~T0 @X0 1 ef1`*F23325 ]
+[v _SPI1_SetTxInterruptHandler `(v ~T0 @X0 1 ef1`*F23309 ]
 "183
 [; ;mcc_generated_files/spi1.c: 183: {
 {
 [e :U _SPI1_SetTxInterruptHandler ]
 "182
 [; ;mcc_generated_files/spi1.c: 182: void SPI1_SetTxInterruptHandler(spi1InterruptHandler_t handler)
-[v _handler `*F23327 ~T0 @X0 1 r1 ]
+[v _handler `*F23311 ~T0 @X0 1 r1 ]
 "183
 [; ;mcc_generated_files/spi1.c: 183: {
 [f ]

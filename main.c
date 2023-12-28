@@ -42,6 +42,8 @@ static void setup(){
     setupRegs();
 }
 
+struct SIM sim;
+
 void main(void)
 {
     OSCFRQ |= 0x07; // set HFosc to 48MHz
@@ -70,7 +72,8 @@ void main(void)
     {
         //printf("Test\r\n"); // Add your application code
 //        UART_Write_Text("Test\r\n");
-        transmit(('A'));
+        char* command="AT";
+        sendCommand(command, sizeof(command)/sizeof(char));
 //        transmit('\n');
         LATB ^= 0x0020;//set all high
         __delay_ms(100);

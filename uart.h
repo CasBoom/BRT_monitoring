@@ -6,6 +6,8 @@
  */
 
 #include "constants.h"
+#include "mcc_generated_files/mcc.h"
+
 #include <stdint.h>
 
 #ifndef UART_H
@@ -44,7 +46,13 @@ void printLn(char* string, int length){
 }
 
 void read(char* buffer, int buffer_size){
-    while(0){ //while last char not endline
+    char input=0;
+    int i=0;
+    while(input != '\n' && i<buffer_size){ //while last char not endline and buffer_size not exceeded
+        while(U5FIFO&BIT1); //while empty
+        input = U5TXB;
+        *(i+buffer) = input;
+        i++;
     //wait till bit available
     //add bit to buffer
     }

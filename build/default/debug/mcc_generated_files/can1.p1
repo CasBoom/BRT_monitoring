@@ -35,13 +35,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _C1CONHbits `VS422 ~T0 @X0 0 e@257 ]
 "110 mcc_generated_files/can1.c
 [; ;mcc_generated_files/can1.c: 110:     if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_CONFIGURATION_MODE))
-[c E23128 0 1 2 .. ]
-[n E23128 . CAN_OP_MODE_REQUEST_SUCCESS CAN_OP_MODE_REQUEST_FAIL CAN_OP_MODE_SYS_ERROR_OCCURED  ]
-[c E23118 0 1 2 3 4 5 6 7 .. ]
-[n E23118 . CAN_NORMAL_FD_MODE CAN_DISABLE_MODE CAN_INTERNAL_LOOPBACK_MODE CAN_LISTEN_ONLY_MODE CAN_CONFIGURATION_MODE CAN_EXTERNAL_LOOPBACK_MODE CAN_NORMAL_2_0_MODE CAN_RESTRICTED_OPERATION_MODE  ]
+[c E23115 0 1 2 .. ]
+[n E23115 . CAN_OP_MODE_REQUEST_SUCCESS CAN_OP_MODE_REQUEST_FAIL CAN_OP_MODE_SYS_ERROR_OCCURED  ]
+[c E23105 0 1 2 3 4 5 6 7 .. ]
+[n E23105 . CAN_NORMAL_FD_MODE CAN_DISABLE_MODE CAN_INTERNAL_LOOPBACK_MODE CAN_LISTEN_ONLY_MODE CAN_CONFIGURATION_MODE CAN_EXTERNAL_LOOPBACK_MODE CAN_NORMAL_2_0_MODE CAN_RESTRICTED_OPERATION_MODE  ]
 "136 mcc_generated_files/can1.h
 [; ;mcc_generated_files/can1.h: 136: CAN_OP_MODE_STATUS CAN1_OperationModeSet(const CAN_OP_MODES reqestMode);
-[v _CAN1_OperationModeSet `(E23128 ~T0 @X0 0 ef1`CE23118 ]
+[v _CAN1_OperationModeSet `(E23115 ~T0 @X0 0 ef1`CE23105 ]
 "13231 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 13231: extern volatile unsigned long C1FIFOBA __attribute__((address(0x14C)));
 [v _C1FIFOBA `Vul ~T0 @X0 0 e@332 ]
@@ -56,7 +56,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _C1CONU `Vuc ~T0 @X0 0 e@258 ]
 "174 mcc_generated_files/can1.h
 [; ;mcc_generated_files/can1.h: 174: CAN_OP_MODES CAN1_OperationModeGet(void);
-[v _CAN1_OperationModeGet `(E23118 ~T0 @X0 0 ef ]
+[v _CAN1_OperationModeGet `(E23105 ~T0 @X0 0 ef ]
 "9161 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 9161:     struct {
 [s S429 :3 `uc 1 :1 `uc 1 :4 `uc 1 ]
@@ -3717,7 +3717,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "71204
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 71204: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-[v F23178 `*VS3279 ~T0 @X0 1 t ]
+[v F23165 `*VS3279 ~T0 @X0 1 t ]
 "82 mcc_generated_files/can1.c
 [; ;mcc_generated_files/can1.c: 82: static volatile struct CAN_FIFOREG * const FIFO = (struct CAN_FIFOREG *)&C1TXQCONL;
 [v _FIFO `C*VS3279 ~T0 @X0 1 s ]
@@ -3777,7 +3777,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _C1CONHbits 0 6 -> -> 1 `i `uc ]
 "110
 [; ;mcc_generated_files/can1.c: 110:     if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_CONFIGURATION_MODE))
-[e $ ! == -> . `E23128 0 `ui -> ( _CAN1_OperationModeSet (1 . `E23118 4 `ui 3282  ]
+[e $ ! == -> . `E23115 0 `ui -> ( _CAN1_OperationModeSet (1 . `E23105 4 `ui 3282  ]
 "111
 [; ;mcc_generated_files/can1.c: 111:     {
 {
@@ -3798,7 +3798,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _CAN1_BitRateConfiguration ..  ]
 "125
 [; ;mcc_generated_files/can1.c: 125:         CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE);
-[e ( _CAN1_OperationModeSet (1 . `E23118 6 ]
+[e ( _CAN1_OperationModeSet (1 . `E23105 6 ]
 "126
 [; ;mcc_generated_files/can1.c: 126:     }
 }
@@ -3809,28 +3809,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "129
 [; ;mcc_generated_files/can1.c: 129: CAN_OP_MODE_STATUS CAN1_OperationModeSet(const CAN_OP_MODES requestMode)
-[v _CAN1_OperationModeSet `(E23128 ~T0 @X0 1 ef1`CE23118 ]
+[v _CAN1_OperationModeSet `(E23115 ~T0 @X0 1 ef1`CE23105 ]
 "130
 [; ;mcc_generated_files/can1.c: 130: {
 {
 [e :U _CAN1_OperationModeSet ]
 "129
 [; ;mcc_generated_files/can1.c: 129: CAN_OP_MODE_STATUS CAN1_OperationModeSet(const CAN_OP_MODES requestMode)
-[v _requestMode `CE23118 ~T0 @X0 1 r1 ]
+[v _requestMode `CE23105 ~T0 @X0 1 r1 ]
 "130
 [; ;mcc_generated_files/can1.c: 130: {
 [f ]
 "131
 [; ;mcc_generated_files/can1.c: 131:     CAN_OP_MODE_STATUS status = CAN_OP_MODE_REQUEST_SUCCESS;
-[v _status `E23128 ~T0 @X0 1 a ]
-[e = _status . `E23128 0 ]
+[v _status `E23115 ~T0 @X0 1 a ]
+[e = _status . `E23115 0 ]
 "132
 [; ;mcc_generated_files/can1.c: 132:     CAN_OP_MODES opMode = CAN1_OperationModeGet();
-[v _opMode `E23118 ~T0 @X0 1 a ]
+[v _opMode `E23105 ~T0 @X0 1 a ]
 [e = _opMode ( _CAN1_OperationModeGet ..  ]
 "134
 [; ;mcc_generated_files/can1.c: 134:     if (CAN_CONFIGURATION_MODE == opMode
-[e $ ! || || == -> . `E23118 4 `ui -> _opMode `ui == -> . `E23118 1 `ui -> _requestMode `ui == -> . `E23118 4 `ui -> _requestMode `ui 3284  ]
+[e $ ! || || == -> . `E23105 4 `ui -> _opMode `ui == -> . `E23105 1 `ui -> _requestMode `ui == -> . `E23105 4 `ui -> _requestMode `ui 3284  ]
 "137
 [; ;mcc_generated_files/can1.c: 137:     {
 {
@@ -3852,7 +3852,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "145
 [; ;mcc_generated_files/can1.c: 145:                 status = CAN_OP_MODE_SYS_ERROR_OCCURED;
-[e = _status . `E23128 2 ]
+[e = _status . `E23115 2 ]
 "146
 [; ;mcc_generated_files/can1.c: 146:                 break;
 [e $U 3287  ]
@@ -3880,7 +3880,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "152
 [; ;mcc_generated_files/can1.c: 152:         status = CAN_OP_MODE_REQUEST_FAIL;
-[e = _status . `E23128 1 ]
+[e = _status . `E23115 1 ]
 "153
 [; ;mcc_generated_files/can1.c: 153:     }
 }
@@ -3895,7 +3895,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "158
 [; ;mcc_generated_files/can1.c: 158: CAN_OP_MODES CAN1_OperationModeGet(void)
-[v _CAN1_OperationModeGet `(E23118 ~T0 @X0 1 ef ]
+[v _CAN1_OperationModeGet `(E23105 ~T0 @X0 1 ef ]
 "159
 [; ;mcc_generated_files/can1.c: 159: {
 {
@@ -3903,7 +3903,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "160
 [; ;mcc_generated_files/can1.c: 160:     return C1CONUbits.OPMOD;
-[e ) -> . . _C1CONUbits 0 5 `E23118 ]
+[e ) -> . . _C1CONUbits 0 5 `E23105 ]
 [e $UE 3290  ]
 "161
 [; ;mcc_generated_files/can1.c: 161: }
@@ -4037,7 +4037,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _C1INTTbits 0 5 -> -> 1 `i `uc ]
 "205
 [; ;mcc_generated_files/can1.c: 205:     CAN1_OperationModeSet(CAN_DISABLE_MODE);
-[e ( _CAN1_OperationModeSet (1 . `E23118 1 ]
+[e ( _CAN1_OperationModeSet (1 . `E23105 1 ]
 "206
 [; ;mcc_generated_files/can1.c: 206: }
 [e :UE 3298 ]

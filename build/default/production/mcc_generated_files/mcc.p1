@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F23348 `(v ~T0 @X0 0 tf ]
-[v F23354 `(v ~T0 @X0 0 tf ]
-[v F23360 `(v ~T0 @X0 0 tf ]
+[v F23332 `(v ~T0 @X0 0 tf ]
+[v F23338 `(v ~T0 @X0 0 tf ]
+[v F23344 `(v ~T0 @X0 0 tf ]
 "87 mcc_generated_files/interrupt_manager.h
 [; ;mcc_generated_files/interrupt_manager.h: 87: void INTERRUPT_Initialize (void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
@@ -3661,13 +3661,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 04FFh ;# ">
 "75 mcc_generated_files/spi1.h
 [; ;mcc_generated_files/spi1.h: 75: void (*SPI1_InterruptHandler)(void);
-[v _SPI1_InterruptHandler `*F23348 ~T0 @X0 1 e ]
+[v _SPI1_InterruptHandler `*F23332 ~T0 @X0 1 e ]
 "77
 [; ;mcc_generated_files/spi1.h: 77: void (*SPI1_RxInterruptHandler)(void);
-[v _SPI1_RxInterruptHandler `*F23354 ~T0 @X0 1 e ]
+[v _SPI1_RxInterruptHandler `*F23338 ~T0 @X0 1 e ]
 "79
 [; ;mcc_generated_files/spi1.h: 79: void (*SPI1_TxInterruptHandler)(void);
-[v _SPI1_TxInterruptHandler `*F23360 ~T0 @X0 1 e ]
+[v _SPI1_TxInterruptHandler `*F23344 ~T0 @X0 1 e ]
 "50 mcc_generated_files/mcc.c
 [; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
