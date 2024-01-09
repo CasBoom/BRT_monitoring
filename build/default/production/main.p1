@@ -20,10 +20,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35942
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 35942: extern volatile unsigned char U5TXB __attribute__((address(0x2EF)));
 [v _U5TXB `Vuc ~T0 @X0 0 e@751 ]
+"49 ./sim.h
+[; ;./sim.h: 49: struct Location {
+[s S3308 `f 1 `f 1 ]
+[n S3308 Location lat lon ]
+"28 C:\Program Files\Microchip\xc8\v2.36\pic\include\c99\stdlib.h
+[; ;C:\Program Files\Microchip\xc8\v2.36\pic\include\c99\stdlib.h: 28: float strtof (const char *restrict, char **restrict);
+[v _strtof `(f ~T0 @X0 0 ef2`*Cuc`**uc ]
 "41 ./sim.h
 [; ;./sim.h: 41: struct SIM{
-[s S3304 `uc 1 `uc 1 `uc 1 `us 1 `us 1 ]
-[n S3304 SIM card connection gnss lat lon ]
+[s S3307 `uc 1 `uc 1 `uc 1 `f 1 `f 1 ]
+[n S3307 SIM card connection gnss lat lon ]
 [p mainexit ]
 "5573 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q84.h: 5573: extern volatile unsigned char OSCFRQ __attribute__((address(0x0B1)));
@@ -3663,124 +3670,148 @@ Version 4.0 HI-TECH Software Intermediate Code
 "79
 [; ;./mcc_generated_files/spi1.h: 79: void (*SPI1_TxInterruptHandler)(void);
 [v _SPI1_TxInterruptHandler `*F23344 ~T0 @X0 1 e ]
-"18 ./uart.h
-[; ;./uart.h: 18: static void setupUART(){
+"20 ./uart.h
+[; ;./uart.h: 20: static void setupUART(){
 [v _setupUART `(v ~T0 @X0 1 sf ]
 {
 [e :U _setupUART ]
 [f ]
-"22
-[; ;./uart.h: 22:     U5BRG = 11;
+"24
+[; ;./uart.h: 24:     U5BRG = 11;
 [e = _U5BRG -> -> 11 `i `us ]
-"23
-[; ;./uart.h: 23:     RC3PPS = 0x2C;
-[e = _RC3PPS -> -> 44 `i `uc ]
 "25
-[; ;./uart.h: 25:     U5CON0 |= 0b00100000 | 0b00010000;
-[e =| _U5CON0 -> | -> 32 `i -> 16 `i `Vuc ]
-"26
-[; ;./uart.h: 26:     U5CON1 |= 0b10000000;
-[e =| _U5CON1 -> -> 128 `i `Vuc ]
+[; ;./uart.h: 25:     RC3PPS = 0x2C;
+[e = _RC3PPS -> -> 44 `i `uc ]
 "27
-[; ;./uart.h: 27: }
+[; ;./uart.h: 27:     U5CON0 |= 0b00100000 | 0b00010000;
+[e =| _U5CON0 -> | -> 32 `i -> 16 `i `Vuc ]
+"28
+[; ;./uart.h: 28:     U5CON1 |= 0b10000000;
+[e =| _U5CON1 -> -> 128 `i `Vuc ]
+"29
+[; ;./uart.h: 29: }
 [e :UE 3281 ]
 }
-"29
-[; ;./uart.h: 29: void transmit(char byte){
+"31
+[; ;./uart.h: 31: void transmit(char byte){
 [v _transmit `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _transmit ]
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
-"30
-[; ;./uart.h: 30:     while(U5FIFO&0b00010000);
+"32
+[; ;./uart.h: 32:     while(U5FIFO&0b00010000);
 [e $U 3283  ]
 [e :U 3284 ]
 [e :U 3283 ]
 [e $ != & -> _U5FIFO `i -> 16 `i -> 0 `i 3284  ]
 [e :U 3285 ]
-"31
-[; ;./uart.h: 31:     U5TXB = byte;
+"33
+[; ;./uart.h: 33:     U5TXB = byte;
 [e = _U5TXB -> _byte `uc ]
-"32
-[; ;./uart.h: 32: }
+"34
+[; ;./uart.h: 34: }
 [e :UE 3282 ]
 }
-"34
-[; ;./uart.h: 34: void print(char* string, int length){
+"36
+[; ;./uart.h: 36: void print(char* string, int length){
 [v _print `(v ~T0 @X0 1 ef2`*uc`i ]
 {
 [e :U _print ]
 [v _string `*uc ~T0 @X0 1 r1 ]
 [v _length `i ~T0 @X0 1 r2 ]
 [f ]
-"35
-[; ;./uart.h: 35:     for(int i=0; i<length; i++){
+"37
+[; ;./uart.h: 37:     for(int i=0; i<length; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 3290  ]
 [e :U 3287 ]
 {
-"36
-[; ;./uart.h: 36:         transmit(*(string+i));
+"38
+[; ;./uart.h: 38:         transmit(*(string+i));
 [e ( _transmit (1 *U + _string * -> _i `x -> -> # *U _string `i `x ]
-"37
-[; ;./uart.h: 37:     }
+"39
+[; ;./uart.h: 39:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 3290 ]
 [e $ < _i _length 3287  ]
 [e :U 3288 ]
 }
-"38
-[; ;./uart.h: 38: }
+"40
+[; ;./uart.h: 40: }
 [e :UE 3286 ]
 }
-"40
-[; ;./uart.h: 40: void printLn(char* string, int length){
+"42
+[; ;./uart.h: 42: void printLn(char* string, int length){
 [v _printLn `(v ~T0 @X0 1 ef2`*uc`i ]
 {
 [e :U _printLn ]
 [v _string `*uc ~T0 @X0 1 r1 ]
 [v _length `i ~T0 @X0 1 r2 ]
 [f ]
-"41
-[; ;./uart.h: 41:     print(string, length);
-[e ( _print (2 , _string _length ]
-"42
-[; ;./uart.h: 42:     transmit('\n');
-[e ( _transmit (1 -> -> 10 `ui `uc ]
 "43
-[; ;./uart.h: 43:     transmit('\r');
-[e ( _transmit (1 -> -> 13 `ui `uc ]
+[; ;./uart.h: 43:     print(string, length);
+[e ( _print (2 , _string _length ]
 "44
-[; ;./uart.h: 44: }
+[; ;./uart.h: 44:     transmit('\n');
+[e ( _transmit (1 -> -> 10 `ui `uc ]
+"45
+[; ;./uart.h: 45:     transmit('\r');
+[e ( _transmit (1 -> -> 13 `ui `uc ]
+"46
+[; ;./uart.h: 46: }
 [e :UE 3291 ]
 }
-"46
-[; ;./uart.h: 46: void read(char* buffer, int buffer_size){
+"48
+[; ;./uart.h: 48: void read(char* buffer, int buffer_size){
 [v _read `(v ~T0 @X0 1 ef2`*uc`i ]
 {
 [e :U _read ]
 [v _buffer `*uc ~T0 @X0 1 r1 ]
 [v _buffer_size `i ~T0 @X0 1 r2 ]
 [f ]
-"47
-[; ;./uart.h: 47:     while(0){
+"49
+[; ;./uart.h: 49:     char input=0;
+[v _input `uc ~T0 @X0 1 a ]
+[e = _input -> -> 0 `i `uc ]
+"50
+[; ;./uart.h: 50:     int i=0;
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+"51
+[; ;./uart.h: 51:     while(input != '\n' && i<buffer_size){
 [e $U 3293  ]
 [e :U 3294 ]
 {
-"50
-[; ;./uart.h: 50:     }
+"52
+[; ;./uart.h: 52:         while(U5FIFO&0b00000010);
+[e $U 3296  ]
+[e :U 3297 ]
+[e :U 3296 ]
+[e $ != & -> _U5FIFO `i -> 2 `i -> 0 `i 3297  ]
+[e :U 3298 ]
+"53
+[; ;./uart.h: 53:         input = U5TXB;
+[e = _input -> _U5TXB `uc ]
+"54
+[; ;./uart.h: 54:         *(i+buffer) = input;
+[e = *U + _buffer * -> _i `x -> -> # *U _buffer `i `x _input ]
+"55
+[; ;./uart.h: 55:         i++;
+[e ++ _i -> 1 `i ]
+"58
+[; ;./uart.h: 58:     }
 }
 [e :U 3293 ]
-"47
-[; ;./uart.h: 47:     while(0){
-[e $ != -> 0 `i -> 0 `i 3294  ]
-[e :U 3295 ]
 "51
-[; ;./uart.h: 51: }
+[; ;./uart.h: 51:     while(input != '\n' && i<buffer_size){
+[e $ && != -> _input `ui -> 10 `ui < _i _buffer_size 3294  ]
+[e :U 3295 ]
+"59
+[; ;./uart.h: 59: }
 [e :UE 3292 ]
 }
 "19 ./sim.h
@@ -3801,7 +3832,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _read (2 , _buffer -> / -> # _buffer `ui -> # `uc `ui `i ]
 "22
 [; ;./sim.h: 22: }
-[e :UE 3296 ]
+[e :UE 3299 ]
 }
 "25
 [; ;./sim.h: 25: uint8_t sendCommand(char* command, int length){
@@ -3820,10 +3851,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28
 [; ;./sim.h: 28:     return (buffer[0]=='O' && buffer[1]=='K');
 [e ) -> -> && == -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 79 `ui == -> *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 75 `ui `i `uc ]
-[e $UE 3297  ]
+[e $UE 3300  ]
 "29
 [; ;./sim.h: 29: }
-[e :UE 3297 ]
+[e :UE 3300 ]
 }
 "32
 [; ;./sim.h: 32: uint8_t checkCommand(char* command, int tLength, char* response, int rLength){
@@ -3846,117 +3877,304 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $U 3302  ]
-[e :U 3299 ]
+[e $U 3305  ]
+[e :U 3302 ]
 {
 "36
 [; ;./sim.h: 36:         if(*(response+i) != *(buffer+i))return 0;
-[e $ ! != -> *U + _response * -> _i `x -> -> # *U _response `i `x `i -> *U + &U _buffer * -> _i `x -> -> # *U &U _buffer `i `x `i 3303  ]
+[e $ ! != -> *U + _response * -> _i `x -> -> # *U _response `i `x `i -> *U + &U _buffer * -> _i `x -> -> # *U &U _buffer `i `x `i 3306  ]
 [e ) -> -> 0 `i `uc ]
-[e $UE 3298  ]
-[e :U 3303 ]
+[e $UE 3301  ]
+[e :U 3306 ]
 "37
 [; ;./sim.h: 37:     }
 }
 [e ++ _i -> 1 `i ]
-[e :U 3302 ]
-[e $ < _i _rLength 3299  ]
-[e :U 3300 ]
+[e :U 3305 ]
+[e $ < _i _rLength 3302  ]
+[e :U 3303 ]
 }
 "38
 [; ;./sim.h: 38:     return 1;
 [e ) -> -> 1 `i `uc ]
-[e $UE 3298  ]
+[e $UE 3301  ]
 "39
 [; ;./sim.h: 39: }
-[e :UE 3298 ]
+[e :UE 3301 ]
 }
-"49
-[; ;./sim.h: 49: uint8_t SIMCardExists(){
+"54
+[; ;./sim.h: 54: uint8_t parseLatLon(struct Location* loc, char* string, int string_length) {
+[v _parseLatLon `(uc ~T0 @X0 1 ef3`*S3308`*uc`i ]
+{
+[e :U _parseLatLon ]
+[v _loc `*S3308 ~T0 @X0 1 r1 ]
+[v _string `*uc ~T0 @X0 1 r2 ]
+[v _string_length `i ~T0 @X0 1 r3 ]
+[f ]
+"55
+[; ;./sim.h: 55:  int field = 0;
+[v _field `i ~T0 @X0 1 a ]
+[e = _field -> 0 `i ]
+"56
+[; ;./sim.h: 56:  int i = 0;
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+"57
+[; ;./sim.h: 57:  int buffer_size = 0;
+[v _buffer_size `i ~T0 @X0 1 a ]
+[e = _buffer_size -> 0 `i ]
+"58
+[; ;./sim.h: 58:  char c = ' ';
+[v _c `uc ~T0 @X0 1 a ]
+[e = _c -> -> 32 `ui `uc ]
+"59
+[; ;./sim.h: 59:  char buffer[128];
+[v _buffer `uc ~T0 @X0 -> 128 `i a ]
+"60
+[; ;./sim.h: 60:  while (field <= 4 && i<string_length) {
+[e $U 3310  ]
+[e :U 3311 ]
+{
+"61
+[; ;./sim.h: 61:   c = *(i + string);
+[e = _c *U + _string * -> _i `x -> -> # *U _string `i `x ]
+"62
+[; ;./sim.h: 62:   *(buffer_size + buffer) = c;
+[e = *U + &U _buffer * -> _buffer_size `x -> -> # *U &U _buffer `i `x _c ]
+"63
+[; ;./sim.h: 63:   i++;
+[e ++ _i -> 1 `i ]
+"64
+[; ;./sim.h: 64:   buffer_size++;
+[e ++ _buffer_size -> 1 `i ]
+"65
+[; ;./sim.h: 65:   if (c == ',') {
+[e $ ! == -> _c `ui -> 44 `ui 3313  ]
+{
+"66
+[; ;./sim.h: 66:    if (field == 3) {
+[e $ ! == _field -> 3 `i 3314  ]
+{
+"67
+[; ;./sim.h: 67:     if (buffer_size <= 1) return 1;
+[e $ ! <= _buffer_size -> 1 `i 3315  ]
+[e ) -> -> 1 `i `uc ]
+[e $UE 3309  ]
+[e :U 3315 ]
+"68
+[; ;./sim.h: 68:     loc->lat = strtof(buffer, ((void*)0));
+[e = . *U _loc 0 ( _strtof (2 , -> &U _buffer `*Cuc -> -> -> 0 `i `*v `**uc ]
+"69
+[; ;./sim.h: 69:    }
+}
+[e :U 3314 ]
+"70
+[; ;./sim.h: 70:    if (field == 4) {
+[e $ ! == _field -> 4 `i 3316  ]
+{
+"71
+[; ;./sim.h: 71:     if (buffer_size <= 1) return 1;
+[e $ ! <= _buffer_size -> 1 `i 3317  ]
+[e ) -> -> 1 `i `uc ]
+[e $UE 3309  ]
+[e :U 3317 ]
+"72
+[; ;./sim.h: 72:     loc->lon = strtof(buffer, ((void*)0));
+[e = . *U _loc 1 ( _strtof (2 , -> &U _buffer `*Cuc -> -> -> 0 `i `*v `**uc ]
+"73
+[; ;./sim.h: 73:    }
+}
+[e :U 3316 ]
+"75
+[; ;./sim.h: 75:    for (int m = buffer_size; m <= 0; m--) {
+{
+[v _m `i ~T0 @X0 1 a ]
+[e = _m _buffer_size ]
+[e $ <= _m -> 0 `i 3318  ]
+[e $U 3319  ]
+[e :U 3318 ]
+{
+"76
+[; ;./sim.h: 76:     *(m + buffer) = ' ';
+[e = *U + &U _buffer * -> _m `x -> -> # *U &U _buffer `i `x -> -> 32 `ui `uc ]
+"77
+[; ;./sim.h: 77:    }
+}
+[e -- _m -> 1 `i ]
+[e $ <= _m -> 0 `i 3318  ]
+[e :U 3319 ]
+}
+"78
+[; ;./sim.h: 78:    buffer_size = 0;
+[e = _buffer_size -> 0 `i ]
+"79
+[; ;./sim.h: 79:    field++;
+[e ++ _field -> 1 `i ]
+"80
+[; ;./sim.h: 80:   }
+}
+[e :U 3313 ]
+"81
+[; ;./sim.h: 81:  }
+}
+[e :U 3310 ]
+"60
+[; ;./sim.h: 60:  while (field <= 4 && i<string_length) {
+[e $ && <= _field -> 4 `i < _i _string_length 3311  ]
+[e :U 3312 ]
+"82
+[; ;./sim.h: 82:  if (i >= string_length) return 2;
+[e $ ! >= _i _string_length 3321  ]
+[e ) -> -> 2 `i `uc ]
+[e $UE 3309  ]
+[e :U 3321 ]
+"83
+[; ;./sim.h: 83:  return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 3309  ]
+"84
+[; ;./sim.h: 84: }
+[e :UE 3309 ]
+}
+"86
+[; ;./sim.h: 86: _Bool updateCoordinates(struct SIM* sim){
+[v _updateCoordinates `(a ~T0 @X0 1 ef1`*S3307 ]
+{
+[e :U _updateCoordinates ]
+[v _sim `*S3307 ~T0 @X0 1 r1 ]
+[f ]
+"87
+[; ;./sim.h: 87:     struct Location loc;
+[v _loc `S3308 ~T0 @X0 1 a ]
+"88
+[; ;./sim.h: 88:     char response[128];
+[v _response `uc ~T0 @X0 -> 128 `i a ]
+[v F23573 `uc ~T0 @X0 -> 11 `i s ]
+[i F23573
+:U ..
+"90
+[; ;./sim.h: 90:     char command[] = "AT+CGNSINF";
+-> 65 `c
+-> 84 `c
+-> 43 `c
+-> 67 `c
+-> 71 `c
+-> 78 `c
+-> 83 `c
+-> 73 `c
+-> 78 `c
+-> 70 `c
+-> 0 `c
+..
+]
+[v _command `uc ~T0 @X0 -> 11 `i a ]
+[e = _command F23573 ]
+"91
+[; ;./sim.h: 91:     bufferCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
+[e ( _bufferCommand (4 , , , &U _command -> / -> # _command `ui -> # `uc `ui `i &U _response -> / -> # _response `ui -> # `uc `ui `i ]
+"92
+[; ;./sim.h: 92:     if( 1 ){
+[e $ ! != -> 1 `i -> 0 `i 3323  ]
+{
+"93
+[; ;./sim.h: 93:          sim->gnss=0;
+[e = . *U _sim 2 -> -> 0 `i `uc ]
+"94
+[; ;./sim.h: 94:          return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 3322  ]
+"95
+[; ;./sim.h: 95:     }
+}
+[e :U 3323 ]
+"96
+[; ;./sim.h: 96:     sim->lat=loc.lat;
+[e = . *U _sim 3 . _loc 0 ]
+"97
+[; ;./sim.h: 97:     sim->lon=loc.lon;
+[e = . *U _sim 4 . _loc 1 ]
+"98
+[; ;./sim.h: 98:     sim->gnss=1;
+[e = . *U _sim 2 -> -> 1 `i `uc ]
+"99
+[; ;./sim.h: 99:     return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 3322  ]
+"100
+[; ;./sim.h: 100: }
+[e :UE 3322 ]
+}
+"102
+[; ;./sim.h: 102: uint8_t SIMCardExists(){
 [v _SIMCardExists `(uc ~T0 @X0 1 ef ]
 {
 [e :U _SIMCardExists ]
 [f ]
-"53
-[; ;./sim.h: 53:     char* command="AT+CPIN=?";
+"106
+[; ;./sim.h: 106:     char* command="AT+CPIN=?";
 [v _command `*uc ~T0 @X0 1 a ]
 [e = _command :s 1C ]
-"54
-[; ;./sim.h: 54:     char* response="READY";
+"107
+[; ;./sim.h: 107:     char* response="READY";
 [v _response `*uc ~T0 @X0 1 a ]
 [e = _response :s 2C ]
-"55
-[; ;./sim.h: 55:     return checkCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
+"108
+[; ;./sim.h: 108:     return checkCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
 [e ) ( _checkCommand (4 , , , _command -> / -> # _command `ui -> # `uc `ui `i _response -> / -> # _response `ui -> # `uc `ui `i ]
-[e $UE 3305  ]
-"56
-[; ;./sim.h: 56: }
-[e :UE 3305 ]
+[e $UE 3324  ]
+"109
+[; ;./sim.h: 109: }
+[e :UE 3324 ]
 }
-"58
-[; ;./sim.h: 58: uint8_t makeConnection(){
+"111
+[; ;./sim.h: 111: uint8_t makeConnection(){
 [v _makeConnection `(uc ~T0 @X0 1 ef ]
 {
 [e :U _makeConnection ]
 [f ]
-"60
-[; ;./sim.h: 60:     return 0;
+"113
+[; ;./sim.h: 113:     return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 3306  ]
-"62
-[; ;./sim.h: 62: }
-[e :UE 3306 ]
+[e $UE 3325  ]
+"115
+[; ;./sim.h: 115: }
+[e :UE 3325 ]
 }
-"64
-[; ;./sim.h: 64: uint8_t updateCoordinates(struct SIM* sim){
-[v _updateCoordinates `(uc ~T0 @X0 1 ef1`*S3304 ]
-{
-[e :U _updateCoordinates ]
-[v _sim `*S3304 ~T0 @X0 1 r1 ]
-[f ]
-"70
-[; ;./sim.h: 70:     return 0;
-[e ) -> -> 0 `i `uc ]
-[e $UE 3307  ]
-"74
-[; ;./sim.h: 74: }
-[e :UE 3307 ]
-}
-"76
-[; ;./sim.h: 76: uint8_t setupSIM(struct SIM* sim){
-[v _setupSIM `(uc ~T0 @X0 1 ef1`*S3304 ]
+"117
+[; ;./sim.h: 117: uint8_t setupSIM(struct SIM* sim){
+[v _setupSIM `(uc ~T0 @X0 1 ef1`*S3307 ]
 {
 [e :U _setupSIM ]
-[v _sim `*S3304 ~T0 @X0 1 r1 ]
+[v _sim `*S3307 ~T0 @X0 1 r1 ]
 [f ]
-"78
-[; ;./sim.h: 78:     sim->card=0;
+"119
+[; ;./sim.h: 119:     sim->card=0;
 [e = . *U _sim 0 -> -> 0 `i `uc ]
-"79
-[; ;./sim.h: 79:     sim->connection=0;
+"120
+[; ;./sim.h: 120:     sim->connection=0;
 [e = . *U _sim 1 -> -> 0 `i `uc ]
-"80
-[; ;./sim.h: 80:     if(!SIMCardExists()) return 1;
-[e $ ! ! != -> ( _SIMCardExists ..  `i -> 0 `i 3309  ]
+"121
+[; ;./sim.h: 121:     if(!SIMCardExists()) return 1;
+[e $ ! ! != -> ( _SIMCardExists ..  `i -> 0 `i 3327  ]
 [e ) -> -> 1 `i `uc ]
-[e $UE 3308  ]
-[e :U 3309 ]
-"81
-[; ;./sim.h: 81:     sim->card=1;
+[e $UE 3326  ]
+[e :U 3327 ]
+"122
+[; ;./sim.h: 122:     sim->card=1;
 [e = . *U _sim 0 -> -> 1 `i `uc ]
-"83
-[; ;./sim.h: 83:     if(updateCoordinates(sim)) return 3;
-[e $ ! != -> ( _updateCoordinates (1 _sim `i -> 0 `i 3310  ]
+"125
+[; ;./sim.h: 125:     if(updateCoordinates(sim)) return 3;
+[e $ ! != -> ( _updateCoordinates (1 _sim `i -> 0 `i 3328  ]
 [e ) -> -> 3 `i `uc ]
-[e $UE 3308  ]
-[e :U 3310 ]
-"86
-[; ;./sim.h: 86:     return 0;
+[e $UE 3326  ]
+[e :U 3328 ]
+"128
+[; ;./sim.h: 128:     return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 3308  ]
-"88
-[; ;./sim.h: 88: }
-[e :UE 3308 ]
+[e $UE 3326  ]
+"130
+[; ;./sim.h: 130: }
+[e :UE 3326 ]
 }
 "37 main.c
 [; ;main.c: 37: static void setupRegs(){
@@ -3969,7 +4187,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _setupUART ..  ]
 "39
 [; ;main.c: 39: }
-[e :UE 3311 ]
+[e :UE 3329 ]
 }
 "41
 [; ;main.c: 41: static void setup(){
@@ -3982,11 +4200,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _setupRegs ..  ]
 "43
 [; ;main.c: 43: }
-[e :UE 3312 ]
+[e :UE 3330 ]
 }
 "45
 [; ;main.c: 45: struct SIM sim;
-[v _sim `S3304 ~T0 @X0 1 e ]
+[v _sim `S3307 ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "47
 [; ;main.c: 47: void main(void)
@@ -4004,7 +4222,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _OSCCON1 -> -> 97 `i `uc ]
 "55
 [; ;main.c: 55:     struct SIM sim;
-[v _sim `S3304 ~T0 @X0 1 a ]
+[v _sim `S3307 ~T0 @X0 1 a ]
 "57
 [; ;main.c: 57:     setupRegs();
 [e ( _setupRegs ..  ]
@@ -4028,7 +4246,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _TRISB -> -> 0 `i `uc ]
 "71
 [; ;main.c: 71:     while (1)
-[e :U 3315 ]
+[e :U 3333 ]
 "72
 [; ;main.c: 72:     {
 {
@@ -4048,12 +4266,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "80
 [; ;main.c: 80:     }
 }
-[e :U 3314 ]
-[e $U 3315  ]
-[e :U 3316 ]
+[e :U 3332 ]
+[e $U 3333  ]
+[e :U 3334 ]
 "81
 [; ;main.c: 81: }
-[e :UE 3313 ]
+[e :UE 3331 ]
 }
 [a 2C 82 69 65 68 89 0 ]
 [a 3C 65 84 0 ]

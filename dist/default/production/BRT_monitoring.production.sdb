@@ -29,24 +29,28 @@ SPI1_DEFAULT 0
 [v _sendCommand sendCommand `(uc  1 e 1 0 ]
 "32
 [v _checkCommand checkCommand `(uc  1 e 1 0 ]
-"49
+"86
+[v _updateCoordinates updateCoordinates `(a  1 e 1 0 ]
+"102
 [v _SIMCardExists SIMCardExists `(uc  1 e 1 0 ]
-"64
-[v _updateCoordinates updateCoordinates `(uc  1 e 1 0 ]
-"76
+"117
 [v _setupSIM setupSIM `(uc  1 e 1 0 ]
-"18 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+"20 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
 [v _setupUART setupUART `(v  1 s 1 setupUART ]
-"29
+"31
 [v _transmit transmit `(v  1 e 1 0 ]
-"34
+"36
 [v _print print `(v  1 e 1 0 ]
-"40
+"42
 [v _printLn printLn `(v  1 e 1 0 ]
-"46
+"48
 [v _read read `(v  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
 "86 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\ftadd.c
@@ -57,6 +61,16 @@ SPI1_DEFAULT 0
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isdigit.c
+[v _isdigit isdigit `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\islower.c
+[v _islower islower `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isspace.c
+[v _isspace isspace `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\isxdigit.c
+[v _isxdigit isxdigit `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nanf.c
+[v _nanf nanf `(f  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -65,10 +79,18 @@ SPI1_DEFAULT 0
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"95 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strtof.c
+[v _strtof strtof `(f  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\toupper.c
+[v _toupper toupper `(i  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "37 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\main.c
 [v _setupRegs setupRegs `(v  1 s 1 setupRegs ]
 "47
@@ -417,34 +439,41 @@ SPI1_DEFAULT 0
 [v _main main `(v  1 e 1 0 ]
 {
 "75
-[v main@command command `*.32uc  1 a 2 75 ]
-[s S646 SIM 7 `uc 1 card 1 0 `uc 1 connection 1 1 `uc 1 gnss 1 2 `us 1 lat 2 3 `us 1 lon 2 5 ]
+[v main@command command `*.32uc  1 a 2 0 ]
+[s S655 SIM 11 `uc 1 card 1 0 `uc 1 connection 1 1 `uc 1 gnss 1 2 `f 1 lat 4 3 `f 1 lon 4 7 ]
 "55
-[v main@sim sim `S646  1 a 7 77 ]
+[v main@sim sim `S655  1 a 11 2 ]
 "81
 } 0
-"76 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
+"117 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
 [v _setupSIM setupSIM `(uc  1 e 1 0 ]
 {
-[s S646 SIM 7 `uc 1 card 1 0 `uc 1 connection 1 1 `uc 1 gnss 1 2 `us 1 lat 2 3 `us 1 lon 2 5 ]
-[v setupSIM@sim sim `*.39S646  1 p 2 72 ]
-"88
+[s S655 SIM 11 `uc 1 card 1 0 `uc 1 connection 1 1 `uc 1 gnss 1 2 `f 1 lat 4 3 `f 1 lon 4 7 ]
+[v setupSIM@sim sim `*.39S655  1 p 2 72 ]
+"130
 } 0
-"64
-[v _updateCoordinates updateCoordinates `(uc  1 e 1 0 ]
+"86
+[v _updateCoordinates updateCoordinates `(a  1 e 1 0 ]
 {
-[s S646 SIM 7 `uc 1 card 1 0 `uc 1 connection 1 1 `uc 1 gnss 1 2 `us 1 lat 2 3 `us 1 lon 2 5 ]
-[v updateCoordinates@sim sim `*.39S646  1 p 2 2 ]
-"74
+"88
+[v updateCoordinates@response response `[128]uc  1 a 128 0 ]
+"90
+[v updateCoordinates@command command `[11]uc  1 a 11 128 ]
+[s S655 SIM 11 `uc 1 card 1 0 `uc 1 connection 1 1 `uc 1 gnss 1 2 `f 1 lat 4 3 `f 1 lon 4 7 ]
+"86
+[v updateCoordinates@sim sim `*.39S655  1 p 2 23 ]
+"88
+[v updateCoordinates@F23573 F23573 `[11]uc  1 s 11 F23573 ]
+"100
 } 0
-"49
+"102
 [v _SIMCardExists SIMCardExists `(uc  1 e 1 0 ]
 {
-"54
+"107
 [v SIMCardExists@response response `*.32uc  1 a 2 70 ]
-"53
+"106
 [v SIMCardExists@command command `*.32uc  1 a 2 68 ]
-"56
+"109
 } 0
 "32
 [v _checkCommand checkCommand `(uc  1 e 1 0 ]
@@ -465,10 +494,10 @@ SPI1_DEFAULT 0
 {
 "39
 } 0
-"18 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+"20 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
 [v _setupUART setupUART `(v  1 s 1 setupUART ]
 {
-"27
+"29
 } 0
 "25 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/sim.h
 [v _sendCommand sendCommand `(uc  1 e 1 0 ]
@@ -483,43 +512,48 @@ SPI1_DEFAULT 0
 "19
 [v _bufferCommand bufferCommand `(v  1 e 1 0 ]
 {
-[v bufferCommand@command command `*.32uc  1 p 2 15 ]
+[v bufferCommand@command command `*.34uc  1 p 2 15 ]
 [v bufferCommand@tLength tLength `i  1 p 2 17 ]
 [v bufferCommand@buffer buffer `*.39uc  1 p 2 19 ]
 [v bufferCommand@bLength bLength `i  1 p 2 21 ]
 "22
 } 0
-"46 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
+"48 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring/uart.h
 [v _read read `(v  1 e 1 0 ]
 {
+"50
+[v read@i i `i  1 a 2 7 ]
+"49
+[v read@input input `uc  1 a 1 9 ]
+"48
 [v read@buffer buffer `*.39uc  1 p 2 2 ]
 [v read@buffer_size buffer_size `i  1 p 2 4 ]
-"51
+"59
 } 0
-"40
+"42
 [v _printLn printLn `(v  1 e 1 0 ]
 {
-[v printLn@string string `*.32uc  1 p 2 11 ]
+[v printLn@string string `*.34uc  1 p 2 11 ]
 [v printLn@length length `i  1 p 2 13 ]
-"44
+"46
 } 0
-"34
+"36
 [v _print print `(v  1 e 1 0 ]
 {
-"35
+"37
 [v print@i i `i  1 a 2 9 ]
-"34
-[v print@string string `*.32uc  1 p 2 3 ]
+"36
+[v print@string string `*.34uc  1 p 2 3 ]
 [v print@length length `i  1 p 2 5 ]
-"38
+"40
 } 0
-"29
+"31
 [v _transmit transmit `(v  1 e 1 0 ]
 {
 [v transmit@byte byte `uc  1 a 1 wreg ]
 [v transmit@byte byte `uc  1 a 1 wreg ]
 [v transmit@byte byte `uc  1 a 1 2 ]
-"32
+"34
 } 0
 "58 C:\Users\casbo\Desktop\files\school\jaar_3\semester_1\BRT\BRT_monitoring\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]

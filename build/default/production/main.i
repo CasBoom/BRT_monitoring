@@ -39082,7 +39082,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 # 1 "./constants.h" 1
 # 8 "./uart.h" 2
-# 18 "./uart.h"
+# 20 "./uart.h"
 static void setupUART(){
 
 
@@ -39112,7 +39112,13 @@ void printLn(char* string, int length){
 }
 
 void read(char* buffer, int buffer_size){
-    while(0){
+    char input=0;
+    int i=0;
+    while(input != '\n' && i<buffer_size){
+        while(U5FIFO&0b00000010);
+        input = U5TXB;
+        *(i+buffer) = input;
+        i++;
 
 
     }
@@ -39150,9 +39156,62 @@ struct SIM{
     uint8_t card;
     uint8_t connection;
     uint8_t gnss;
-    uint16_t lat;
-    uint16_t lon;
+    float lat;
+    float lon;
 };
+
+struct Location {
+ float lat;
+ float lon;
+};
+
+uint8_t parseLatLon(struct Location* loc, char* string, int string_length) {
+ int field = 0;
+ int i = 0;
+ int buffer_size = 0;
+ char c = ' ';
+ char buffer[128];
+ while (field <= 4 && i<string_length) {
+  c = *(i + string);
+  *(buffer_size + buffer) = c;
+  i++;
+  buffer_size++;
+  if (c == ',') {
+   if (field == 3) {
+    if (buffer_size <= 1) return 1;
+    loc->lat = strtof(buffer, ((void*)0));
+   }
+   if (field == 4) {
+    if (buffer_size <= 1) return 1;
+    loc->lon = strtof(buffer, ((void*)0));
+   }
+
+   for (int m = buffer_size; m <= 0; m--) {
+    *(m + buffer) = ' ';
+   }
+   buffer_size = 0;
+   field++;
+  }
+ }
+ if (i >= string_length) return 2;
+ return 0;
+}
+
+_Bool updateCoordinates(struct SIM* sim){
+    struct Location loc;
+    char response[128];
+
+    char command[] = "AT+CGNSINF";
+    bufferCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
+    if( 1 ){
+         sim->gnss=0;
+         return 1;
+    }
+    sim->lat=loc.lat;
+    sim->lon=loc.lon;
+    sim->gnss=1;
+    return 0;
+}
 
 uint8_t SIMCardExists(){
 
@@ -39169,24 +39228,13 @@ uint8_t makeConnection(){
 
 }
 
-uint8_t updateCoordinates(struct SIM* sim){
-
-
-
-
-
-    return 0;
-
-
-
-}
-
 uint8_t setupSIM(struct SIM* sim){
 
     sim->card=0;
     sim->connection=0;
     if(!SIMCardExists()) return 1;
     sim->card=1;
+
 
     if(updateCoordinates(sim)) return 3;
 
