@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\BRT_telemetrie.X.production.hex">
+  <executable name="dist/default/production\BRT_monitoring.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>131072</length>
-      <used>488</used>
-      <free>130584</free>
+      <used>640</used>
+      <free>130432</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>12800</length>
-      <used>23</used>
-      <free>12777</free>
+      <used>84</used>
+      <free>12716</free>
     </memory>
   </executable>
 </project>

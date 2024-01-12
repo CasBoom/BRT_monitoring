@@ -42,10 +42,63 @@ struct SIM{
     uint8_t card;
     uint8_t connection;
     uint8_t gnss;
-    uint16_t lat;
-    uint16_t lon;
+    float lat;
+    float lon;
 };
-    
+
+struct Location {
+	float lat;
+	float lon;
+};
+
+uint8_t parseLatLon(struct Location* loc, char* string, int string_length) {
+	int field = 0; // NMAE field
+	int i = 0; // string index
+	int buffer_size = 0; // buffer index
+	char c = ' '; // current character
+	char buffer[128];
+	while (field <= 4 && buffer_size <= 128-1) {
+		c = *(i + string);
+		*(buffer_size + buffer) = c;
+		i++;
+		buffer_size++;
+		if (c == ',') {
+			if (field == 3) {
+				if (buffer_size <= 1) return 1;
+				loc->lat = strtof(buffer, NULL);
+			}
+			if (field == 4) {
+				if (buffer_size <= 1) return 1;
+				loc->lon = strtof(buffer, NULL);
+			}
+
+			for (int m = buffer_size; m <= 0; m--) { // clear buffer
+				*(m + buffer) = ' ';
+			}
+			buffer_size = 0;
+			field++;
+		}
+	}
+	if (field < 4) return 2; // out of space
+	return 0;
+}
+
+bool updateCoordinates(struct SIM* sim){
+    struct Location loc;
+    char response[128];
+    // ask for GNSS coordinates
+    char command[] = "AT+CGNSINF";
+    bufferCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
+    if( 1 ){ //parseLatLon(loc*, response*, sizeof(response)/sizeof(char) )
+         sim->gnss=0; // no gnss update
+         return 1; //return 1 if an error occured
+    }
+    sim->lat=loc.lat;
+    sim->lon=loc.lon;
+    sim->gnss=1; // gnss updated
+    return 0;
+}
+
 uint8_t SIMCardExists(){
     // check if simcard exists
     // return 1 if it does
@@ -61,18 +114,6 @@ uint8_t makeConnection(){
     //return 1 if failed;
 }
 
-uint8_t updateCoordinates(struct SIM* sim){
-    // ask for GNSS coordinates
-    // if successful, 
-    // &sim.lat=latitude;
-    // &sim.lon=longitude;
-    // &sim.gnss=1;
-    return 0;
-    //if unsuccessful
-    //&sim.gnss=0;
-    //return 1 (don't change lat or lon, because the old values still give information)
-}
-
 uint8_t setupSIM(struct SIM* sim){
     //attempt to setup sim
     sim->card=0;
@@ -80,13 +121,11 @@ uint8_t setupSIM(struct SIM* sim){
     if(!SIMCardExists()) return 1; // return 1 if the SimCard doesn't exist
     sim->card=1;
     // turn on gnss with AT commands, once OK ask update
-    if(updateCoordinates(sim)) return 3;
     //if(pingServer()) return 4;
     
     return 0;
     
 }
-
 
 #ifdef	__cplusplus
 }

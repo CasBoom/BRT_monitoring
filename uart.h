@@ -6,6 +6,8 @@
  */
 
 #include "constants.h"
+#include "mcc_generated_files/mcc.h"
+
 #include <stdint.h>
 
 #ifndef UART_H
@@ -17,9 +19,9 @@ extern "C" {
 
 static void setupUART(){
     //U5CON0 
-    // Fosc/[16(UxBRG+1)]
+    //Fosc/[16(UxBRG+1)]
     // baudrate must be 1125000 bits/s
-    U5BRG = 11; //divide by 11
+    U5BRG = 12; //divide by 12
     RC3PPS = 0x2C;//set pin 18 to Tx
     // 1 startbit, 8 databits, 1 end bits, no parity check: dit is de default
     U5CON0 |= BIT5 | BIT4; //enable RX and TX
@@ -44,9 +46,13 @@ void printLn(char* string, int length){
 }
 
 void read(char* buffer, int buffer_size){
-    while(0){ //while last char not endline
-    //wait till bit available
-    //add bit to buffer
+    char input=0;
+    int i=0;
+    while(input != '\n' && i<buffer_size){ //while last char not endline and buffer_size not exceeded
+        while(U5FIFO&BIT1); //while empty wait till bit available
+        input = U5TXB; //add bit to buffer
+        *(i+buffer) = input;
+        i++;
     }
 }
 
