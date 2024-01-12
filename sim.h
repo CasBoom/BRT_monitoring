@@ -121,8 +121,6 @@ uint8_t setupSIM(struct SIM* sim){
     if(!SIMCardExists()) return 1; // return 1 if the SimCard doesn't exist
     sim->card=1;
     // turn on gnss with AT commands, once OK ask update
-    
-    if(updateCoordinates(sim)) return 3;
     //if(pingServer()) return 4;
     
     return 0;
