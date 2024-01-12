@@ -31,9 +31,8 @@
  */
 
 //staat van het hele project, is globaal 
-enum state {Starting};
-//state State;
-
+enum state {setup, wait, getGNSS, sendData };
+enum state State;
 static void setupRegs(){
     setupUART();
 }
@@ -46,30 +45,38 @@ struct SIM sim;
 
 void main(void)
 {
-
+    State = setup; 
     OSCFRQ |= 0x07; // set HFosc to 48MHz
 //    OSCCON1 |= 0b01110000; // set oscillator source to HFosc
     OSCCON1 = 0b01100001; // set oscillator source to HFosc
     // Initialize the device
-//    SYSTEM_Initialize();
-    //State = Starting;
+    
     struct SIM sim;
     setupRegs();
-    //setupSIM(&sim);
+    setupSIM(&sim);
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
-    TRISB &= ~BIT5; 
-
-    // Disable the Global Interrupts
-    INTERRUPT_GlobalInterruptDisable();
-    
     PORTB = 0x00; // Clear PORTB
     LATB = 0x00; // Clear Data Latch
     ANSELB = 0x00; // Enable digital drivers
     TRISB = 0x00; //set all registers to OUTPUT
     while (1)
     {
-        __delay_ms(5000);
+        switch(state){
+            case wait:
+                INTERRUPT_GlobalInterruptEnable();
+                __delay_ms(5000);
+                state = getGNSS;
+                break;
+            case getGNSS:
+                INTERRUPT_GlobalInterruptDisable();
+                updateCoordinates(struct SIM* sim);
+                state = sendData;
+                break;
+            case sendData:
+                state = wait;
+                break;
+
+        }
         TRISB ^= BIT5; 
     }
 }
