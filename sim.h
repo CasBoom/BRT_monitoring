@@ -99,6 +99,10 @@ bool updateCoordinates(struct SIM* sim){
     return 0;
 }
 
+void transmitData(struct SIM* sim){
+    
+}
+
 uint8_t SIMCardExists(){
     // check if simcard exists
     // return 1 if it does
