@@ -38956,8 +38956,8 @@ static void setupUART(){
 
 
     U5BRG = 12;
-
     RC3PPS = 0x2C;
+
 
     U5CON0 |= 0b00100000 | 0b00010000;
     U5CON1 |= 0b10000000;
@@ -38969,15 +38969,16 @@ void transmit(char byte){
 }
 
 void print(char* string, int length){
-    for(int i=0; i<length; i++){
+    for(int i=0; i<length-1; i++)
+    {
         transmit(*(string+i));
     }
 }
 
 void printLn(char* string, int length){
     print(string, length);
-    transmit('\n');
     transmit('\r');
+    transmit('\n');
 }
 
 void read(char* buffer, int buffer_size){
@@ -38987,16 +38988,400 @@ void read(char* buffer, int buffer_size){
         while(U5FIFO&0b00000010);
         input = U5TXB;
         *(i+buffer) = input;
+        transmit(input);
         i++;
+        U5FIFO |= 0b00000010;
     }
 }
 # 25 "main.c" 2
 
 # 1 "./sim.h" 1
-# 10 "./sim.h"
+
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\math.h" 1 3
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\math.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 39 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef float float_t;
+
+
+
+
+typedef double double_t;
+# 16 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\math.h" 2 3
+# 42 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\math.h" 3
+int __fpclassifyf(float);
+
+
+
+
+
+
+
+int __signbitf(float);
+# 59 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\math.h" 3
+double acos(double);
+float acosf(float);
+long double acosl(long double);
+
+
+
+double acosh(double);
+float acoshf(float);
+long double acoshl(long double);
+
+
+
+double asin(double);
+float asinf(float);
+long double asinl(long double);
+
+
+
+double asinh(double);
+float asinhf(float);
+long double asinhl(long double);
+
+
+
+double atan(double);
+float atanf(float);
+long double atanl(long double);
+
+
+
+double atan2(double, double);
+float atan2f(float, float);
+long double atan2l(long double, long double);
+
+
+
+double atanh(double);
+float atanhf(float);
+long double atanhl(long double);
+
+
+
+double cbrt(double);
+float cbrtf(float);
+long double cbrtl(long double);
+
+
+
+double ceil(double);
+float ceilf(float);
+long double ceill(long double);
+
+
+
+double copysign(double, double);
+float copysignf(float, float);
+long double copysignl(long double, long double);
+
+
+
+double cos(double);
+float cosf(float);
+long double cosl(long double);
+
+
+
+double cosh(double);
+float coshf(float);
+long double coshl(long double);
+
+
+
+double erf(double);
+float erff(float);
+long double erfl(long double);
+
+
+
+double erfc(double);
+float erfcf(float);
+long double erfcl(long double);
+
+
+
+double exp(double);
+float expf(float);
+long double expl(long double);
+
+
+
+double exp2(double);
+float exp2f(float);
+long double exp2l(long double);
+
+
+
+double expm1(double);
+float expm1f(float);
+long double expm1l(long double);
+
+
+
+double fabs(double);
+float fabsf(float);
+long double fabsl(long double);
+
+
+
+double fdim(double, double);
+float fdimf(float, float);
+long double fdiml(long double, long double);
+
+
+
+double floor(double);
+float floorf(float);
+long double floorl(long double);
+
+
+
+double fma(double, double, double);
+float fmaf(float, float, float);
+long double fmal(long double, long double, long double);
+
+
+
+double fmax(double, double);
+float fmaxf(float, float);
+long double fmaxl(long double, long double);
+
+
+
+double fmin(double, double);
+float fminf(float, float);
+long double fminl(long double, long double);
+
+
+
+double fmod(double, double);
+float fmodf(float, float);
+long double fmodl(long double, long double);
+
+
+
+double frexp(double, int *);
+float frexpf(float, int *);
+long double frexpl(long double, int *);
+
+
+
+double hypot(double, double);
+float hypotf(float, float);
+long double hypotl(long double, long double);
+
+
+
+int ilogb(double);
+int ilogbf(float);
+int ilogbl(long double);
+
+
+
+double ldexp(double, int);
+float ldexpf(float, int);
+long double ldexpl(long double, int);
+
+
+
+
+double lgamma(double);
+float lgammaf(float);
+long double lgammal(long double);
+
+
+
+
+long long llrint(double);
+long long llrintf(float);
+long long llrintl(long double);
+
+
+
+long long llround(double);
+long long llroundf(float);
+long long llroundl(long double);
+
+
+
+
+double log(double);
+float logf(float);
+long double logl(long double);
+
+
+
+double log10(double);
+float log10f(float);
+long double log10l(long double);
+
+
+
+double log1p(double);
+float log1pf(float);
+long double log1pl(long double);
+
+
+
+double log2(double);
+float log2f(float);
+long double log2l(long double);
+
+
+
+double logb(double);
+float logbf(float);
+long double logbl(long double);
+
+
+
+long lrint(double);
+long lrintf(float);
+long lrintl(long double);
+
+
+
+long lround(double);
+long lroundf(float);
+long lroundl(long double);
+
+
+
+double modf(double, double *);
+float modff(float, float *);
+long double modfl(long double, long double *);
+
+
+
+double nan(const char *);
+float nanf(const char *);
+long double nanl(const char *);
+
+
+
+double nearbyint(double);
+float nearbyintf(float);
+long double nearbyintl(long double);
+
+
+
+double nextafter(double, double);
+float nextafterf(float, float);
+long double nextafterl(long double, long double);
+
+
+
+double nexttoward(double, long double);
+float nexttowardf(float, long double);
+long double nexttowardl(long double, long double);
+# 326 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\math.h" 3
+double pow(double, double);
+__attribute__((nonreentrant)) float powf(float, float);
+long double powl(long double, long double);
+
+
+
+double remainder(double, double);
+float remainderf(float, float);
+long double remainderl(long double, long double);
+
+
+
+double remquo(double, double, int *);
+float remquof(float, float, int *);
+long double remquol(long double, long double, int *);
+
+
+
+double rint(double);
+float rintf(float);
+long double rintl(long double);
+
+
+
+double round(double);
+float roundf(float);
+long double roundl(long double);
+
+
+
+double scalbln(double, long);
+float scalblnf(float, long);
+long double scalblnl(long double, long);
+
+
+
+double scalbn(double, int);
+float scalbnf(float, int);
+long double scalbnl(long double, int);
+
+
+
+double sin(double);
+float sinf(float);
+long double sinl(long double);
+
+
+
+double sinh(double);
+float sinhf(float);
+long double sinhl(long double);
+
+
+
+double sqrt(double);
+float sqrtf(float);
+long double sqrtl(long double);
+
+
+
+double tan(double);
+float tanf(float);
+long double tanl(long double);
+
+
+
+double tanh(double);
+float tanhf(float);
+long double tanhl(long double);
+
+
+
+double tgamma(double);
+float tgammaf(float);
+long double tgammal(long double);
+
+
+
+double trunc(double);
+float truncf(float);
+long double truncl(long double);
+# 431 "C:\\Program Files\\Microchip\\xc8\\v2.45\\pic\\include\\c99\\math.h" 3
+extern int signgam;
+
+double j0(double);
+double j1(double);
+double jn(int, double);
+
+double y0(double);
+double y1(double);
+double yn(int, double);
+# 9 "./sim.h" 2
+
+
 # 1 "./uart.h" 1
-# 10 "./sim.h" 2
-# 19 "./sim.h"
+# 11 "./sim.h" 2
+# 22 "./sim.h"
 void bufferCommand(char* command, int tLength, char* buffer, int bLength){
     printLn(command, tLength);
     read(buffer, sizeof(buffer)/sizeof(char));
@@ -39019,6 +39404,7 @@ uint8_t checkCommand(char* command, int tLength, char* response, int rLength){
     return 1;
 }
 
+
 struct SIM{
     uint8_t card;
     uint8_t connection;
@@ -39027,9 +39413,17 @@ struct SIM{
     float lon;
 };
 
+
 struct Location {
  float lat;
  float lon;
+};
+
+
+struct CanData{
+    int canId;
+    int valueId;
+    int value;
 };
 
 uint8_t parseLatLon(struct Location* loc, char* string, int string_length) {
@@ -39070,14 +39464,57 @@ _Bool updateCoordinates(struct SIM* sim){
 
     char command[] = "AT+CGNSINF";
     bufferCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
-    if( 1 ){
+    if( parseLatLon(&loc, response, sizeof(response)/sizeof(char) ) ){
          sim->gnss=0;
+         print(response, sizeof(response)/sizeof(char));
          return 1;
     }
     sim->lat=loc.lat;
     sim->lon=loc.lon;
+    print(response, sizeof(response)/sizeof(char));
     sim->gnss=1;
     return 0;
+}
+
+void setPostData(struct CanData *CanData){
+    unsigned int dataSize = 0;
+    char dataSizeString[8];
+    char postData[256];
+    char token[] = "55f201a9df707c12d8012ba2b111c2d3";
+    char timeoutString[] = "9999";
+    sprintf(postData,"token=%s&value=%d","55f201a9df707c12d8012ba2b111c2d3", CanData->value);
+    dataSize = strlen(postData);
+
+
+    sprintf(dataSizeString,"%u", dataSize);
+    print(dataSizeString, strlen(dataSizeString)+1);
+    transmit(',');
+    printLn(timeoutString,sizeof(timeoutString)/sizeof(char));
+    printLn(postData, strlen(postData)+1);
+}
+
+void transmitData(struct SIM* sim, struct CanData *CanData, int dataListLength){
+
+    char url[] = "basically-clean-alpaca.ngrok-free.app/value/update/";
+    char id[5];
+    char init[] = "AT+HTTPINIT";
+    char para[] = "AT+HTTPPARA=\"URL\",";
+    char data[] = "AT+HTTPDATA=";
+    char send[] = "AT+HTTPACTION=1";
+    char term[] = "AT+HTTPTERM";
+
+    for(int i =0; i < dataListLength; i++){
+        sprintf(id, "%d", (CanData+i)->valueId);
+        printLn(init, sizeof(init)/sizeof(char));
+        print(para, sizeof(para)/sizeof(char));
+        print(url, sizeof(url)/sizeof(char));
+        printLn(id, strlen(id)+1);
+        print(data, sizeof(data)/sizeof(char));
+        setPostData((CanData+i));
+        printLn(send, sizeof(send)/sizeof(char));
+        printLn(term, sizeof(term)/sizeof(char));
+    }
+
 }
 
 uint8_t SIMCardExists(){
@@ -39104,8 +39541,6 @@ uint8_t setupSIM(struct SIM* sim){
 
 
 
-
-
     return 0;
 
 }
@@ -39118,55 +39553,68 @@ uint8_t setupSIM(struct SIM* sim){
 
 
 
-enum state {Starting};
+enum state {setup, wait, getGNSS, sendData };
+enum state State;
 
-
-static void setupRegs(){
+static void setupPic(){
     setupUART();
-}
 
-static void setup(){
-    setupRegs();
 }
 
 struct SIM sim;
+struct CanData dataList[] = {
+    {
+        0,
+        7,
+        8
+    },
+    {
+        1,
+        8,
+        3
+    },
+    {
+        2,
+        9,
+        2
+    },
+};
 
 void main(void)
 {
-
+    State = setup;
     OSCFRQ |= 0x07;
 
     OSCCON1 = 0b01100001;
 
 
-
     struct SIM sim;
-    setupRegs();
-
-
-
-    TRISB &= ~0b00100000;
-
-
-    (INTCON0bits.GIE = 0);
+    transmitData(&sim, &dataList, 3);
+    setupPic();
 
     PORTB = 0x00;
     LATB = 0x00;
     ANSELB = 0x00;
     TRISB = 0x00;
-
-
-    char command[] = "Wayooo het werkt\n\r";
+    State = wait;
     while (1)
     {
+        switch(State){
+            case wait:
+                (INTCON0bits.GIE = 1);
+                _delay((unsigned long)((20000)*(1000000/4000.0)));
+                State = getGNSS;
+                break;
+            case getGNSS:
+                (INTCON0bits.GIE = 0);
 
-
-        print(command, sizeof(command)/sizeof(char));
-
-
-
-        _delay((unsigned long)((5000)*(1000000/4000.0)));
-
+                State = sendData;
+                break;
+            case sendData:
+                transmitData(&sim, &dataList, 3);
+                State = wait;
+                break;
+        }
         TRISB ^= 0b00100000;
     }
 }

@@ -23,6 +23,7 @@ static void setupUART(){
     // baudrate must be 1125000 bits/s
     U5BRG = 12; //divide by 12
     RC3PPS = 0x2C;//set pin 18 to Tx
+    //RA5PPS = 5;
     // 1 startbit, 8 databits, 1 end bits, no parity check: dit is de default
     U5CON0 |= BIT5 | BIT4; //enable RX and TX
     U5CON1 |= BIT7; //enable UART
@@ -34,15 +35,16 @@ void transmit(char byte){
 }
 
 void print(char* string, int length){
-    for(int i=0; i<length; i++){
+    for(int i=0; i<length-1; i++) // minus one for the string terminator
+    {
         transmit(*(string+i));
     }
 }
 
 void printLn(char* string, int length){
     print(string, length);
-    transmit('\n');
     transmit('\r');
+    transmit('\n');
 }
 
 void read(char* buffer, int buffer_size){
@@ -52,7 +54,9 @@ void read(char* buffer, int buffer_size){
         while(U5FIFO&BIT1); //while empty wait till bit available
         input = U5TXB; //add bit to buffer
         *(i+buffer) = input;
+        transmit(input);
         i++;
+        U5FIFO |= BIT1; // clear buffer
     }
 }
 
