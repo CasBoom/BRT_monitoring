@@ -6,6 +6,7 @@
  */
 
 #include <stdint.h>
+#include <math.h>
 #include "constants.h"
 #include "uart.h"
 #ifndef SIM_H
@@ -14,7 +15,9 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-    
+   
+#define URL "basically-clean-alpaca.ngrok-free.app/value/update/"
+#define TOKEN "55f201a9df707c12d8012ba2b111c2d3"
 //sends response to buffer for more involved response flows
 void bufferCommand(char* command, int tLength, char* buffer, int bLength){
     printLn(command, tLength);
@@ -38,6 +41,7 @@ uint8_t checkCommand(char* command, int tLength, char* response, int rLength){
     return 1;
 }
 
+// sim struct, stores status of the SIM and the GNSS location
 struct SIM{
     uint8_t card;
     uint8_t connection;
@@ -46,9 +50,17 @@ struct SIM{
     float lon;
 };
 
+// struct to temporarily store location data in the parser
 struct Location {
 	float lat;
 	float lon;
+};
+
+// data object to be transmitted
+struct CanData{
+    int canId;
+    int valueId;
+    int value;
 };
 
 uint8_t parseLatLon(struct Location* loc, char* string, int string_length) {
@@ -89,17 +101,56 @@ bool updateCoordinates(struct SIM* sim){
     // ask for GNSS coordinates
     char command[] = "AT+CGNSINF";
     bufferCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
-    if( 1 ){ //parseLatLon(loc*, response*, sizeof(response)/sizeof(char) )
+    if( parseLatLon(&loc, response, sizeof(response)/sizeof(char) ) ){ 
          sim->gnss=0; // no gnss update
+         print(response, sizeof(response)/sizeof(char));
          return 1; //return 1 if an error occured
     }
     sim->lat=loc.lat;
     sim->lon=loc.lon;
+    print(response, sizeof(response)/sizeof(char));
     sim->gnss=1; // gnss updated
     return 0;
 }
 
-void transmitData(struct SIM* sim){
+void setPostData(struct CanData *CanData){
+    unsigned int dataSize = 0;
+    char dataSizeString[8];
+    char postData[256];
+    char token[] = TOKEN;
+    char timeoutString[] = "9999";
+    sprintf(postData,"token=%s&value=%d",TOKEN, CanData->value);
+    dataSize = strlen(postData);
+    
+    // set data size
+    sprintf(dataSizeString,"%u", dataSize);
+    print(dataSizeString, strlen(dataSizeString)+1);
+    transmit(',');
+    printLn(timeoutString,sizeof(timeoutString)/sizeof(char));
+    printLn(postData, strlen(postData)+1);
+}
+
+void transmitData(struct CanData *CanData, int dataListLength){
+    //this is ugly
+    char url[] = URL;
+    char id[5];
+    char init[] = "AT+HTTPINIT";
+    char para[] = "AT+HTTPPARA=\"URL\",";
+    char data[] = "AT+HTTPDATA=";
+    char send[] = "AT+HTTPACTION=1";
+    char term[] = "AT+HTTPTERM";
+    
+    for(int i =0; i < dataListLength; i++){
+        sprintf(id, "%d", (CanData+i)->valueId);
+        printLn(init, sizeof(init)/sizeof(char)); // init http
+        print(para, sizeof(para)/sizeof(char));   // setup params
+        print(url, sizeof(url)/sizeof(char));   // append URL
+        printLn(id, strlen(id)+1);
+        print(data, sizeof(data)/sizeof(char));   // beginning of start data string
+        setPostData((CanData+i));                     // set post data
+        printLn(send, sizeof(send)/sizeof(char)); // send post request
+        printLn(term, sizeof(term)/sizeof(char));
+    }
     
 }
 

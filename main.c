@@ -33,15 +33,30 @@
 //staat van het hele project, is globaal 
 enum state {setup, wait, getGNSS, sendData };
 enum state State;
-static void setupRegs(){
-    setupUART();
-}
 
-static void setup(){
-    setupRegs();
+static void setupPic(){
+    setupUART();
+    //setupSIM(&sim);
 }
 
 struct SIM sim;
+struct CanData dataList[] = {
+    {
+        0,
+        7, //speed
+        8
+    },
+    {
+        1,
+        8, //acceleration
+        3
+    },
+    {
+        2,
+        9, //battery charge
+        2
+    },
+};
 
 void main(void)
 {
@@ -52,30 +67,31 @@ void main(void)
     // Initialize the device
     
     struct SIM sim;
-    setupRegs();
-    setupSIM(&sim);
+    transmitData(&sim, &dataList, 3);
+    setupPic();
     // Enable the Global Interrupts
     PORTB = 0x00; // Clear PORTB
     LATB = 0x00; // Clear Data Latch
     ANSELB = 0x00; // Enable digital drivers
     TRISB = 0x00; //set all registers to OUTPUT
+    State = wait;
     while (1)
     {
-        switch(state){
+        switch(State){
             case wait:
                 INTERRUPT_GlobalInterruptEnable();
-                __delay_ms(5000);
-                state = getGNSS;
+                __delay_ms(20000);
+                State = getGNSS;
                 break;
             case getGNSS:
                 INTERRUPT_GlobalInterruptDisable();
-                updateCoordinates(struct SIM* sim);
-                state = sendData;
+                //updateCoordinates(&sim); disabled due to issues with the receive function
+                State = sendData;
                 break;
             case sendData:
-                state = wait;
+                transmitData(&dataList, 3);
+                State = wait;
                 break;
-
         }
         TRISB ^= BIT5; 
     }

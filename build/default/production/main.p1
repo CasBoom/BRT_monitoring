@@ -20,17 +20,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35628
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q83.h: 35628: extern volatile unsigned char U5TXB __attribute__((address(0x2EF)));
 [v _U5TXB `Vuc ~T0 @X0 0 e@751 ]
-"49 ./sim.h
-[; ;./sim.h: 49: struct Location {
+"54 ./sim.h
+[; ;./sim.h: 54: struct Location {
 [s S3300 `f 1 `f 1 ]
 [n S3300 Location lat lon ]
 "31 C:\Program Files\Microchip\xc8\v2.45\pic\include\c99\stdlib.h
 [; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\c99\stdlib.h: 31: float strtof (const char *restrict, char **restrict);
 [v _strtof `(f ~T0 @X0 0 ef2`*Cuc`**uc ]
-"41 ./sim.h
-[; ;./sim.h: 41: struct SIM{
+"45 ./sim.h
+[; ;./sim.h: 45: struct SIM{
 [s S3299 `uc 1 `uc 1 `uc 1 `f 1 `f 1 ]
 [n S3299 SIM card connection gnss lat lon ]
+"60
+[; ;./sim.h: 60: struct CanData{
+[s S3301 `i 1 `i 1 `i 1 ]
+[n S3301 CanData canId valueId value ]
+"121 C:\Program Files\Microchip\xc8\v2.45\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"54 C:\Program Files\Microchip\xc8\v2.45\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.45\pic\include\c99\string.h: 54: size_t strlen (const char *);
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
+"35 main.c
+[; ;main.c: 35: enum state State;
+[c E23960 0 1 2 3 .. ]
+[n E23960 state setup wait getGNSS sendData  ]
 [p mainexit ]
 "5573 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q83.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q83.h: 5573: extern volatile unsigned char OSCFRQ __attribute__((address(0x0B1)));
@@ -38,6 +52,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5335
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q83.h: 5335: extern volatile unsigned char OSCCON1 __attribute__((address(0x0AD)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@173 ]
+"3868
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q83.h: 3868:     };
+[v _PORTB `Vuc ~T0 @X0 0 e@1231 ]
+"3308
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q83.h: 3308: 
+[v _LATB `Vuc ~T0 @X0 0 e@1215 ]
+"59941
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q83.h: 59941: extern volatile unsigned char ANSELB __attribute__((address(0x408)));
+[v _ANSELB `Vuc ~T0 @X0 0 e@1032 ]
 "3588
 [v _TRISB `Vuc ~T0 @X0 0 e@1223 ]
 "4098
@@ -51,15 +74,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S3173 . . . ]
 "4112
 [v _INTCON0bits `VS3173 ~T0 @X0 0 e@1238 ]
-"3868
-[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q83.h: 3868:     };
-[v _PORTB `Vuc ~T0 @X0 0 e@1231 ]
-"3308
-[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q83.h: 3308: 
-[v _LATB `Vuc ~T0 @X0 0 e@1215 ]
-"59941
-[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18F-Q_DFP/1.20.405/xc8\pic\include\proc\pic18f47q83.h: 59941: extern volatile unsigned char ANSELB __attribute__((address(0x408)));
-[v _ANSELB `Vuc ~T0 @X0 0 e@1032 ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v2.45\pic\include\builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
@@ -3670,8 +3684,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./uart.h: 24:     U5BRG = 12;
 [e = _U5BRG -> -> 12 `i `us ]
-"26
-[; ;./uart.h: 26:     RC3PPS = 0x2C;
+"25
+[; ;./uart.h: 25:     RC3PPS = 0x2C;
 [e = _RC3PPS -> -> 44 `i `uc ]
 "28
 [; ;./uart.h: 28:     U5CON0 |= 0b00100000 | 0b00010000;
@@ -3713,100 +3727,108 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _length `i ~T0 @X0 1 r2 ]
 [f ]
 "38
-[; ;./uart.h: 38:     for(int i=0; i<length; i++){
+[; ;./uart.h: 38:     for(int i=0; i<length-1; i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 3282  ]
 [e :U 3279 ]
-{
 "39
-[; ;./uart.h: 39:         transmit(*(string+i));
-[e ( _transmit (1 *U + _string * -> _i `x -> -> # *U _string `i `x ]
+[; ;./uart.h: 39:     {
+{
 "40
-[; ;./uart.h: 40:     }
+[; ;./uart.h: 40:         transmit(*(string+i));
+[e ( _transmit (1 *U + _string * -> _i `x -> -> # *U _string `i `x ]
+"41
+[; ;./uart.h: 41:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 3282 ]
-[e $ < _i _length 3279  ]
+[e $ < _i - _length -> 1 `i 3279  ]
 [e :U 3280 ]
 }
-"41
-[; ;./uart.h: 41: }
+"42
+[; ;./uart.h: 42: }
 [e :UE 3278 ]
 }
-"43
-[; ;./uart.h: 43: void printLn(char* string, int length){
+"44
+[; ;./uart.h: 44: void printLn(char* string, int length){
 [v _printLn `(v ~T0 @X0 1 ef2`*uc`i ]
 {
 [e :U _printLn ]
 [v _string `*uc ~T0 @X0 1 r1 ]
 [v _length `i ~T0 @X0 1 r2 ]
 [f ]
-"44
-[; ;./uart.h: 44:     print(string, length);
-[e ( _print (2 , _string _length ]
 "45
-[; ;./uart.h: 45:     transmit('\n');
-[e ( _transmit (1 -> -> 10 `ui `uc ]
+[; ;./uart.h: 45:     print(string, length);
+[e ( _print (2 , _string _length ]
 "46
 [; ;./uart.h: 46:     transmit('\r');
 [e ( _transmit (1 -> -> 13 `ui `uc ]
 "47
-[; ;./uart.h: 47: }
+[; ;./uart.h: 47:     transmit('\n');
+[e ( _transmit (1 -> -> 10 `ui `uc ]
+"48
+[; ;./uart.h: 48: }
 [e :UE 3283 ]
 }
-"49
-[; ;./uart.h: 49: void read(char* buffer, int buffer_size){
+"50
+[; ;./uart.h: 50: void read(char* buffer, int buffer_size){
 [v _read `(v ~T0 @X0 1 ef2`*uc`i ]
 {
 [e :U _read ]
 [v _buffer `*uc ~T0 @X0 1 r1 ]
 [v _buffer_size `i ~T0 @X0 1 r2 ]
 [f ]
-"50
-[; ;./uart.h: 50:     char input=0;
+"51
+[; ;./uart.h: 51:     char input=0;
 [v _input `uc ~T0 @X0 1 a ]
 [e = _input -> -> 0 `i `uc ]
-"51
-[; ;./uart.h: 51:     int i=0;
+"52
+[; ;./uart.h: 52:     int i=0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"52
-[; ;./uart.h: 52:     while(input != '\n' && i<buffer_size){
+"53
+[; ;./uart.h: 53:     while(input != '\n' && i<buffer_size){
 [e $U 3285  ]
 [e :U 3286 ]
 {
-"53
-[; ;./uart.h: 53:         while(U5FIFO&0b00000010);
+"54
+[; ;./uart.h: 54:         while(U5FIFO&0b00000010);
 [e $U 3288  ]
 [e :U 3289 ]
 [e :U 3288 ]
 [e $ != & -> _U5FIFO `i -> 2 `i -> 0 `i 3289  ]
 [e :U 3290 ]
-"54
-[; ;./uart.h: 54:         input = U5TXB;
-[e = _input -> _U5TXB `uc ]
 "55
-[; ;./uart.h: 55:         *(i+buffer) = input;
-[e = *U + _buffer * -> _i `x -> -> # *U _buffer `i `x _input ]
+[; ;./uart.h: 55:         input = U5TXB;
+[e = _input -> _U5TXB `uc ]
 "56
-[; ;./uart.h: 56:         i++;
-[e ++ _i -> 1 `i ]
+[; ;./uart.h: 56:         *(i+buffer) = input;
+[e = *U + _buffer * -> _i `x -> -> # *U _buffer `i `x _input ]
 "57
-[; ;./uart.h: 57:     }
+[; ;./uart.h: 57:         transmit(input);
+[e ( _transmit (1 _input ]
+"58
+[; ;./uart.h: 58:         i++;
+[e ++ _i -> 1 `i ]
+"59
+[; ;./uart.h: 59:         U5FIFO |= 0b00000010;
+[e =| _U5FIFO -> -> 2 `i `Vuc ]
+"60
+[; ;./uart.h: 60:     }
 }
 [e :U 3285 ]
-"52
-[; ;./uart.h: 52:     while(input != '\n' && i<buffer_size){
+"53
+[; ;./uart.h: 53:     while(input != '\n' && i<buffer_size){
 [e $ && != -> _input `ui -> 10 `ui < _i _buffer_size 3286  ]
 [e :U 3287 ]
-"58
-[; ;./uart.h: 58: }
+"61
+[; ;./uart.h: 61: }
 [e :UE 3284 ]
 }
-"19 ./sim.h
-[; ;./sim.h: 19: void bufferCommand(char* command, int tLength, char* buffer, int bLength){
+"22 ./sim.h
+[; ;./sim.h: 22: void bufferCommand(char* command, int tLength, char* buffer, int bLength){
 [v _bufferCommand `(v ~T0 @X0 1 ef4`*uc`i`*uc`i ]
 {
 [e :U _bufferCommand ]
@@ -3815,40 +3837,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _buffer `*uc ~T0 @X0 1 r3 ]
 [v _bLength `i ~T0 @X0 1 r4 ]
 [f ]
-"20
-[; ;./sim.h: 20:     printLn(command, tLength);
+"23
+[; ;./sim.h: 23:     printLn(command, tLength);
 [e ( _printLn (2 , _command _tLength ]
-"21
-[; ;./sim.h: 21:     read(buffer, sizeof(buffer)/sizeof(char));
+"24
+[; ;./sim.h: 24:     read(buffer, sizeof(buffer)/sizeof(char));
 [e ( _read (2 , _buffer -> / -> # _buffer `ui -> # `uc `ui `i ]
-"22
-[; ;./sim.h: 22: }
+"25
+[; ;./sim.h: 25: }
 [e :UE 3291 ]
 }
-"25
-[; ;./sim.h: 25: uint8_t sendCommand(char* command, int length){
+"28
+[; ;./sim.h: 28: uint8_t sendCommand(char* command, int length){
 [v _sendCommand `(uc ~T0 @X0 1 ef2`*uc`i ]
 {
 [e :U _sendCommand ]
 [v _command `*uc ~T0 @X0 1 r1 ]
 [v _length `i ~T0 @X0 1 r2 ]
 [f ]
-"26
-[; ;./sim.h: 26:     char buffer[32];
+"29
+[; ;./sim.h: 29:     char buffer[32];
 [v _buffer `uc ~T0 @X0 -> 32 `i a ]
-"27
-[; ;./sim.h: 27:     bufferCommand(command, length, buffer, sizeof(buffer)/sizeof(char));
+"30
+[; ;./sim.h: 30:     bufferCommand(command, length, buffer, sizeof(buffer)/sizeof(char));
 [e ( _bufferCommand (4 , , , _command _length &U _buffer -> / -> # _buffer `ui -> # `uc `ui `i ]
-"28
-[; ;./sim.h: 28:     return (buffer[0]=='O' && buffer[1]=='K');
+"31
+[; ;./sim.h: 31:     return (buffer[0]=='O' && buffer[1]=='K');
 [e ) -> -> && == -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 79 `ui == -> *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 75 `ui `i `uc ]
 [e $UE 3292  ]
-"29
-[; ;./sim.h: 29: }
+"32
+[; ;./sim.h: 32: }
 [e :UE 3292 ]
 }
-"32
-[; ;./sim.h: 32: uint8_t checkCommand(char* command, int tLength, char* response, int rLength){
+"35
+[; ;./sim.h: 35: uint8_t checkCommand(char* command, int tLength, char* response, int rLength){
 [v _checkCommand `(uc ~T0 @X0 1 ef4`*uc`i`*uc`i ]
 {
 [e :U _checkCommand ]
@@ -3857,44 +3879,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _response `*uc ~T0 @X0 1 r3 ]
 [v _rLength `i ~T0 @X0 1 r4 ]
 [f ]
-"33
-[; ;./sim.h: 33:     char buffer[32];
+"36
+[; ;./sim.h: 36:     char buffer[32];
 [v _buffer `uc ~T0 @X0 -> 32 `i a ]
-"34
-[; ;./sim.h: 34:     bufferCommand(command, tLength, buffer, sizeof(buffer)/sizeof(char));
+"37
+[; ;./sim.h: 37:     bufferCommand(command, tLength, buffer, sizeof(buffer)/sizeof(char));
 [e ( _bufferCommand (4 , , , _command _tLength &U _buffer -> / -> # _buffer `ui -> # `uc `ui `i ]
-"35
-[; ;./sim.h: 35:     for(int i=0; i<rLength; i++){
+"38
+[; ;./sim.h: 38:     for(int i=0; i<rLength; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 3297  ]
 [e :U 3294 ]
 {
-"36
-[; ;./sim.h: 36:         if(*(response+i) != *(buffer+i))return 0;
+"39
+[; ;./sim.h: 39:         if(*(response+i) != *(buffer+i))return 0;
 [e $ ! != -> *U + _response * -> _i `x -> -> # *U _response `i `x `i -> *U + &U _buffer * -> _i `x -> -> # *U &U _buffer `i `x `i 3298  ]
 [e ) -> -> 0 `i `uc ]
 [e $UE 3293  ]
 [e :U 3298 ]
-"37
-[; ;./sim.h: 37:     }
+"40
+[; ;./sim.h: 40:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 3297 ]
 [e $ < _i _rLength 3294  ]
 [e :U 3295 ]
 }
-"38
-[; ;./sim.h: 38:     return 1;
+"41
+[; ;./sim.h: 41:     return 1;
 [e ) -> -> 1 `i `uc ]
 [e $UE 3293  ]
-"39
-[; ;./sim.h: 39: }
+"42
+[; ;./sim.h: 42: }
 [e :UE 3293 ]
 }
-"54
-[; ;./sim.h: 54: uint8_t parseLatLon(struct Location* loc, char* string, int string_length) {
+"66
+[; ;./sim.h: 66: uint8_t parseLatLon(struct Location* loc, char* string, int string_length) {
 [v _parseLatLon `(uc ~T0 @X0 1 ef3`*S3300`*uc`i ]
 {
 [e :U _parseLatLon ]
@@ -3902,149 +3924,149 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _string `*uc ~T0 @X0 1 r2 ]
 [v _string_length `i ~T0 @X0 1 r3 ]
 [f ]
-"55
-[; ;./sim.h: 55:  int field = 0;
+"67
+[; ;./sim.h: 67:  int field = 0;
 [v _field `i ~T0 @X0 1 a ]
 [e = _field -> 0 `i ]
-"56
-[; ;./sim.h: 56:  int i = 0;
+"68
+[; ;./sim.h: 68:  int i = 0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"57
-[; ;./sim.h: 57:  int buffer_size = 0;
+"69
+[; ;./sim.h: 69:  int buffer_size = 0;
 [v _buffer_size `i ~T0 @X0 1 a ]
 [e = _buffer_size -> 0 `i ]
-"58
-[; ;./sim.h: 58:  char c = ' ';
+"70
+[; ;./sim.h: 70:  char c = ' ';
 [v _c `uc ~T0 @X0 1 a ]
 [e = _c -> -> 32 `ui `uc ]
-"59
-[; ;./sim.h: 59:  char buffer[128];
-[v _buffer `uc ~T0 @X0 -> 128 `i a ]
-"60
-[; ;./sim.h: 60:  while (field <= 4 && buffer_size <= 128-1) {
-[e $U 3302  ]
-[e :U 3303 ]
-{
-"61
-[; ;./sim.h: 61:   c = *(i + string);
-[e = _c *U + _string * -> _i `x -> -> # *U _string `i `x ]
-"62
-[; ;./sim.h: 62:   *(buffer_size + buffer) = c;
-[e = *U + &U _buffer * -> _buffer_size `x -> -> # *U &U _buffer `i `x _c ]
-"63
-[; ;./sim.h: 63:   i++;
-[e ++ _i -> 1 `i ]
-"64
-[; ;./sim.h: 64:   buffer_size++;
-[e ++ _buffer_size -> 1 `i ]
-"65
-[; ;./sim.h: 65:   if (c == ',') {
-[e $ ! == -> _c `ui -> 44 `ui 3305  ]
-{
-"66
-[; ;./sim.h: 66:    if (field == 3) {
-[e $ ! == _field -> 3 `i 3306  ]
-{
-"67
-[; ;./sim.h: 67:     if (buffer_size <= 1) return 1;
-[e $ ! <= _buffer_size -> 1 `i 3307  ]
-[e ) -> -> 1 `i `uc ]
-[e $UE 3301  ]
-[e :U 3307 ]
-"68
-[; ;./sim.h: 68:     loc->lat = strtof(buffer, ((void*)0));
-[e = . *U _loc 0 ( _strtof (2 , -> &U _buffer `*Cuc -> -> -> 0 `i `*v `**uc ]
-"69
-[; ;./sim.h: 69:    }
-}
-[e :U 3306 ]
-"70
-[; ;./sim.h: 70:    if (field == 4) {
-[e $ ! == _field -> 4 `i 3308  ]
-{
 "71
-[; ;./sim.h: 71:     if (buffer_size <= 1) return 1;
-[e $ ! <= _buffer_size -> 1 `i 3309  ]
-[e ) -> -> 1 `i `uc ]
-[e $UE 3301  ]
-[e :U 3309 ]
+[; ;./sim.h: 71:  char buffer[128];
+[v _buffer `uc ~T0 @X0 -> 128 `i a ]
 "72
-[; ;./sim.h: 72:     loc->lon = strtof(buffer, ((void*)0));
-[e = . *U _loc 1 ( _strtof (2 , -> &U _buffer `*Cuc -> -> -> 0 `i `*v `**uc ]
+[; ;./sim.h: 72:  while (field <= 4 && buffer_size <= 128-1) {
+[e $U 3303  ]
+[e :U 3304 ]
+{
 "73
-[; ;./sim.h: 73:    }
-}
-[e :U 3308 ]
+[; ;./sim.h: 73:   c = *(i + string);
+[e = _c *U + _string * -> _i `x -> -> # *U _string `i `x ]
+"74
+[; ;./sim.h: 74:   *(buffer_size + buffer) = c;
+[e = *U + &U _buffer * -> _buffer_size `x -> -> # *U &U _buffer `i `x _c ]
 "75
-[; ;./sim.h: 75:    for (int m = buffer_size; m <= 0; m--) {
+[; ;./sim.h: 75:   i++;
+[e ++ _i -> 1 `i ]
+"76
+[; ;./sim.h: 76:   buffer_size++;
+[e ++ _buffer_size -> 1 `i ]
+"77
+[; ;./sim.h: 77:   if (c == ',') {
+[e $ ! == -> _c `ui -> 44 `ui 3306  ]
+{
+"78
+[; ;./sim.h: 78:    if (field == 3) {
+[e $ ! == _field -> 3 `i 3307  ]
+{
+"79
+[; ;./sim.h: 79:     if (buffer_size <= 1) return 1;
+[e $ ! <= _buffer_size -> 1 `i 3308  ]
+[e ) -> -> 1 `i `uc ]
+[e $UE 3302  ]
+[e :U 3308 ]
+"80
+[; ;./sim.h: 80:     loc->lat = strtof(buffer, ((void*)0));
+[e = . *U _loc 0 ( _strtof (2 , -> &U _buffer `*Cuc -> -> -> 0 `i `*v `**uc ]
+"81
+[; ;./sim.h: 81:    }
+}
+[e :U 3307 ]
+"82
+[; ;./sim.h: 82:    if (field == 4) {
+[e $ ! == _field -> 4 `i 3309  ]
+{
+"83
+[; ;./sim.h: 83:     if (buffer_size <= 1) return 1;
+[e $ ! <= _buffer_size -> 1 `i 3310  ]
+[e ) -> -> 1 `i `uc ]
+[e $UE 3302  ]
+[e :U 3310 ]
+"84
+[; ;./sim.h: 84:     loc->lon = strtof(buffer, ((void*)0));
+[e = . *U _loc 1 ( _strtof (2 , -> &U _buffer `*Cuc -> -> -> 0 `i `*v `**uc ]
+"85
+[; ;./sim.h: 85:    }
+}
+[e :U 3309 ]
+"87
+[; ;./sim.h: 87:    for (int m = buffer_size; m <= 0; m--) {
 {
 [v _m `i ~T0 @X0 1 a ]
 [e = _m _buffer_size ]
-[e $ <= _m -> 0 `i 3310  ]
-[e $U 3311  ]
-[e :U 3310 ]
+[e $ <= _m -> 0 `i 3311  ]
+[e $U 3312  ]
+[e :U 3311 ]
 {
-"76
-[; ;./sim.h: 76:     *(m + buffer) = ' ';
+"88
+[; ;./sim.h: 88:     *(m + buffer) = ' ';
 [e = *U + &U _buffer * -> _m `x -> -> # *U &U _buffer `i `x -> -> 32 `ui `uc ]
-"77
-[; ;./sim.h: 77:    }
+"89
+[; ;./sim.h: 89:    }
 }
 [e -- _m -> 1 `i ]
-[e $ <= _m -> 0 `i 3310  ]
-[e :U 3311 ]
+[e $ <= _m -> 0 `i 3311  ]
+[e :U 3312 ]
 }
-"78
-[; ;./sim.h: 78:    buffer_size = 0;
+"90
+[; ;./sim.h: 90:    buffer_size = 0;
 [e = _buffer_size -> 0 `i ]
-"79
-[; ;./sim.h: 79:    field++;
+"91
+[; ;./sim.h: 91:    field++;
 [e ++ _field -> 1 `i ]
-"80
-[; ;./sim.h: 80:   }
+"92
+[; ;./sim.h: 92:   }
 }
+[e :U 3306 ]
+"93
+[; ;./sim.h: 93:  }
+}
+[e :U 3303 ]
+"72
+[; ;./sim.h: 72:  while (field <= 4 && buffer_size <= 128-1) {
+[e $ && <= _field -> 4 `i <= _buffer_size - -> 128 `i -> 1 `i 3304  ]
 [e :U 3305 ]
-"81
-[; ;./sim.h: 81:  }
-}
-[e :U 3302 ]
-"60
-[; ;./sim.h: 60:  while (field <= 4 && buffer_size <= 128-1) {
-[e $ && <= _field -> 4 `i <= _buffer_size - -> 128 `i -> 1 `i 3303  ]
-[e :U 3304 ]
-"82
-[; ;./sim.h: 82:  if (field < 4) return 2;
-[e $ ! < _field -> 4 `i 3313  ]
+"94
+[; ;./sim.h: 94:  if (field < 4) return 2;
+[e $ ! < _field -> 4 `i 3314  ]
 [e ) -> -> 2 `i `uc ]
-[e $UE 3301  ]
-[e :U 3313 ]
-"83
-[; ;./sim.h: 83:  return 0;
+[e $UE 3302  ]
+[e :U 3314 ]
+"95
+[; ;./sim.h: 95:  return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 3301  ]
-"84
-[; ;./sim.h: 84: }
-[e :UE 3301 ]
+[e $UE 3302  ]
+"96
+[; ;./sim.h: 96: }
+[e :UE 3302 ]
 }
-"86
-[; ;./sim.h: 86: _Bool updateCoordinates(struct SIM* sim){
+"98
+[; ;./sim.h: 98: _Bool updateCoordinates(struct SIM* sim){
 [v _updateCoordinates `(a ~T0 @X0 1 ef1`*S3299 ]
 {
 [e :U _updateCoordinates ]
 [v _sim `*S3299 ~T0 @X0 1 r1 ]
 [f ]
-"87
-[; ;./sim.h: 87:     struct Location loc;
+"99
+[; ;./sim.h: 99:     struct Location loc;
 [v _loc `S3300 ~T0 @X0 1 a ]
-"88
-[; ;./sim.h: 88:     char response[128];
+"100
+[; ;./sim.h: 100:     char response[128];
 [v _response `uc ~T0 @X0 -> 128 `i a ]
-[v F23497 `uc ~T0 @X0 -> 11 `i s ]
-[i F23497
+[v F23925 `uc ~T0 @X0 -> 11 `i s ]
+[i F23925
 :U ..
-"90
-[; ;./sim.h: 90:     char command[] = "AT+CGNSINF";
+"102
+[; ;./sim.h: 102:     char command[] = "AT+CGNSINF";
 -> 65 `c
 -> 84 `c
 -> 43 `c
@@ -4059,228 +4081,608 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _command `uc ~T0 @X0 -> 11 `i a ]
-[e = _command F23497 ]
-"91
-[; ;./sim.h: 91:     bufferCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
+[e = _command F23925 ]
+"103
+[; ;./sim.h: 103:     bufferCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
 [e ( _bufferCommand (4 , , , &U _command -> / -> # _command `ui -> # `uc `ui `i &U _response -> / -> # _response `ui -> # `uc `ui `i ]
-"92
-[; ;./sim.h: 92:     if( 1 ){
-[e $ ! != -> 1 `i -> 0 `i 3315  ]
+"104
+[; ;./sim.h: 104:     if( parseLatLon(&loc, response, sizeof(response)/sizeof(char) ) ){
+[e $ ! != -> ( _parseLatLon (3 , , &U _loc &U _response -> / -> # _response `ui -> # `uc `ui `i `i -> 0 `i 3316  ]
 {
-"93
-[; ;./sim.h: 93:          sim->gnss=0;
+"105
+[; ;./sim.h: 105:          sim->gnss=0;
 [e = . *U _sim 2 -> -> 0 `i `uc ]
-"94
-[; ;./sim.h: 94:          return 1;
+"106
+[; ;./sim.h: 106:          print(response, sizeof(response)/sizeof(char));
+[e ( _print (2 , &U _response -> / -> # _response `ui -> # `uc `ui `i ]
+"107
+[; ;./sim.h: 107:          return 1;
 [e ) -> -> 1 `i `a ]
-[e $UE 3314  ]
-"95
-[; ;./sim.h: 95:     }
+[e $UE 3315  ]
+"108
+[; ;./sim.h: 108:     }
 }
-[e :U 3315 ]
-"96
-[; ;./sim.h: 96:     sim->lat=loc.lat;
+[e :U 3316 ]
+"109
+[; ;./sim.h: 109:     sim->lat=loc.lat;
 [e = . *U _sim 3 . _loc 0 ]
-"97
-[; ;./sim.h: 97:     sim->lon=loc.lon;
+"110
+[; ;./sim.h: 110:     sim->lon=loc.lon;
 [e = . *U _sim 4 . _loc 1 ]
-"98
-[; ;./sim.h: 98:     sim->gnss=1;
+"111
+[; ;./sim.h: 111:     print(response, sizeof(response)/sizeof(char));
+[e ( _print (2 , &U _response -> / -> # _response `ui -> # `uc `ui `i ]
+"112
+[; ;./sim.h: 112:     sim->gnss=1;
 [e = . *U _sim 2 -> -> 1 `i `uc ]
-"99
-[; ;./sim.h: 99:     return 0;
+"113
+[; ;./sim.h: 113:     return 0;
 [e ) -> -> 0 `i `a ]
-[e $UE 3314  ]
-"100
-[; ;./sim.h: 100: }
-[e :UE 3314 ]
+[e $UE 3315  ]
+"114
+[; ;./sim.h: 114: }
+[e :UE 3315 ]
 }
-"102
-[; ;./sim.h: 102: uint8_t SIMCardExists(){
+"116
+[; ;./sim.h: 116: void setPostData(struct CanData *CanData){
+[v _setPostData `(v ~T0 @X0 1 ef1`*S3301 ]
+{
+[e :U _setPostData ]
+[v _CanData `*S3301 ~T0 @X0 1 r1 ]
+[f ]
+"117
+[; ;./sim.h: 117:     unsigned int dataSize = 0;
+[v _dataSize `ui ~T0 @X0 1 a ]
+[e = _dataSize -> -> 0 `i `ui ]
+"118
+[; ;./sim.h: 118:     char dataSizeString[8];
+[v _dataSizeString `uc ~T0 @X0 -> 8 `i a ]
+"119
+[; ;./sim.h: 119:     char postData[256];
+[v _postData `uc ~T0 @X0 -> 256 `i a ]
+[v F23932 `uc ~T0 @X0 -> 33 `i s ]
+[i F23932
+:U ..
+"120
+[; ;./sim.h: 120:     char token[] = "55f201a9df707c12d8012ba2b111c2d3";
+-> 53 `c
+-> 53 `c
+-> 102 `c
+-> 50 `c
+-> 48 `c
+-> 49 `c
+-> 97 `c
+-> 57 `c
+-> 100 `c
+-> 102 `c
+-> 55 `c
+-> 48 `c
+-> 55 `c
+-> 99 `c
+-> 49 `c
+-> 50 `c
+-> 100 `c
+-> 56 `c
+-> 48 `c
+-> 49 `c
+-> 50 `c
+-> 98 `c
+-> 97 `c
+-> 50 `c
+-> 98 `c
+-> 49 `c
+-> 49 `c
+-> 49 `c
+-> 99 `c
+-> 50 `c
+-> 100 `c
+-> 51 `c
+-> 0 `c
+..
+]
+[v _token `uc ~T0 @X0 -> 33 `i a ]
+[e = _token F23932 ]
+[v F23934 `uc ~T0 @X0 -> 5 `i s ]
+[i F23934
+:U ..
+"121
+[; ;./sim.h: 121:     char timeoutString[] = "9999";
+-> 57 `c
+-> 57 `c
+-> 57 `c
+-> 57 `c
+-> 0 `c
+..
+]
+[v _timeoutString `uc ~T0 @X0 -> 5 `i a ]
+[e = _timeoutString F23934 ]
+"122
+[; ;./sim.h: 122:     sprintf(postData,"token=%s&value=%d","55f201a9df707c12d8012ba2b111c2d3", CanData->value);
+[e ( _sprintf (1 , , (. , &U _postData :s 1C :s 2C . *U _CanData 2 ]
+"123
+[; ;./sim.h: 123:     dataSize = strlen(postData);
+[e = _dataSize ( _strlen (1 -> &U _postData `*Cuc ]
+"126
+[; ;./sim.h: 126:     sprintf(dataSizeString,"%u", dataSize);
+[e ( _sprintf (1 , (. , &U _dataSizeString :s 3C _dataSize ]
+"127
+[; ;./sim.h: 127:     print(dataSizeString, strlen(dataSizeString)+1);
+[e ( _print (2 , &U _dataSizeString -> + ( _strlen (1 -> &U _dataSizeString `*Cuc -> -> 1 `i `ui `i ]
+"128
+[; ;./sim.h: 128:     transmit(',');
+[e ( _transmit (1 -> -> 44 `ui `uc ]
+"129
+[; ;./sim.h: 129:     printLn(timeoutString,sizeof(timeoutString)/sizeof(char));
+[e ( _printLn (2 , &U _timeoutString -> / -> # _timeoutString `ui -> # `uc `ui `i ]
+"130
+[; ;./sim.h: 130:     printLn(postData, strlen(postData)+1);
+[e ( _printLn (2 , &U _postData -> + ( _strlen (1 -> &U _postData `*Cuc -> -> 1 `i `ui `i ]
+"131
+[; ;./sim.h: 131: }
+[e :UE 3317 ]
+}
+"133
+[; ;./sim.h: 133: void transmitData(struct SIM* sim, struct CanData *CanData, int dataListLength){
+[v _transmitData `(v ~T0 @X0 1 ef3`*S3299`*S3301`i ]
+{
+[e :U _transmitData ]
+[v _sim `*S3299 ~T0 @X0 1 r1 ]
+[v _CanData `*S3301 ~T0 @X0 1 r2 ]
+[v _dataListLength `i ~T0 @X0 1 r3 ]
+[f ]
+[v F23940 `uc ~T0 @X0 -> 52 `i s ]
+[i F23940
+:U ..
+"135
+[; ;./sim.h: 135:     char url[] = "basically-clean-alpaca.ngrok-free.app/value/update/";
+-> 98 `c
+-> 97 `c
+-> 115 `c
+-> 105 `c
+-> 99 `c
+-> 97 `c
+-> 108 `c
+-> 108 `c
+-> 121 `c
+-> 45 `c
+-> 99 `c
+-> 108 `c
+-> 101 `c
+-> 97 `c
+-> 110 `c
+-> 45 `c
+-> 97 `c
+-> 108 `c
+-> 112 `c
+-> 97 `c
+-> 99 `c
+-> 97 `c
+-> 46 `c
+-> 110 `c
+-> 103 `c
+-> 114 `c
+-> 111 `c
+-> 107 `c
+-> 45 `c
+-> 102 `c
+-> 114 `c
+-> 101 `c
+-> 101 `c
+-> 46 `c
+-> 97 `c
+-> 112 `c
+-> 112 `c
+-> 47 `c
+-> 118 `c
+-> 97 `c
+-> 108 `c
+-> 117 `c
+-> 101 `c
+-> 47 `c
+-> 117 `c
+-> 112 `c
+-> 100 `c
+-> 97 `c
+-> 116 `c
+-> 101 `c
+-> 47 `c
+-> 0 `c
+..
+]
+[v _url `uc ~T0 @X0 -> 52 `i a ]
+[e = _url F23940 ]
+"136
+[; ;./sim.h: 136:     char id[5];
+[v _id `uc ~T0 @X0 -> 5 `i a ]
+[v F23943 `uc ~T0 @X0 -> 12 `i s ]
+[i F23943
+:U ..
+"137
+[; ;./sim.h: 137:     char init[] = "AT+HTTPINIT";
+-> 65 `c
+-> 84 `c
+-> 43 `c
+-> 72 `c
+-> 84 `c
+-> 84 `c
+-> 80 `c
+-> 73 `c
+-> 78 `c
+-> 73 `c
+-> 84 `c
+-> 0 `c
+..
+]
+[v _init `uc ~T0 @X0 -> 12 `i a ]
+[e = _init F23943 ]
+[v F23945 `uc ~T0 @X0 -> 19 `i s ]
+[i F23945
+:U ..
+"138
+[; ;./sim.h: 138:     char para[] = "AT+HTTPPARA=\"URL\",";
+-> 65 `c
+-> 84 `c
+-> 43 `c
+-> 72 `c
+-> 84 `c
+-> 84 `c
+-> 80 `c
+-> 80 `c
+-> 65 `c
+-> 82 `c
+-> 65 `c
+-> 61 `c
+-> 34 `c
+-> 85 `c
+-> 82 `c
+-> 76 `c
+-> 34 `c
+-> 44 `c
+-> 0 `c
+..
+]
+[v _para `uc ~T0 @X0 -> 19 `i a ]
+[e = _para F23945 ]
+[v F23947 `uc ~T0 @X0 -> 13 `i s ]
+[i F23947
+:U ..
+"139
+[; ;./sim.h: 139:     char data[] = "AT+HTTPDATA=";
+-> 65 `c
+-> 84 `c
+-> 43 `c
+-> 72 `c
+-> 84 `c
+-> 84 `c
+-> 80 `c
+-> 68 `c
+-> 65 `c
+-> 84 `c
+-> 65 `c
+-> 61 `c
+-> 0 `c
+..
+]
+[v _data `uc ~T0 @X0 -> 13 `i a ]
+[e = _data F23947 ]
+[v F23949 `uc ~T0 @X0 -> 16 `i s ]
+[i F23949
+:U ..
+"140
+[; ;./sim.h: 140:     char send[] = "AT+HTTPACTION=1";
+-> 65 `c
+-> 84 `c
+-> 43 `c
+-> 72 `c
+-> 84 `c
+-> 84 `c
+-> 80 `c
+-> 65 `c
+-> 67 `c
+-> 84 `c
+-> 73 `c
+-> 79 `c
+-> 78 `c
+-> 61 `c
+-> 49 `c
+-> 0 `c
+..
+]
+[v _send `uc ~T0 @X0 -> 16 `i a ]
+[e = _send F23949 ]
+[v F23951 `uc ~T0 @X0 -> 12 `i s ]
+[i F23951
+:U ..
+"141
+[; ;./sim.h: 141:     char term[] = "AT+HTTPTERM";
+-> 65 `c
+-> 84 `c
+-> 43 `c
+-> 72 `c
+-> 84 `c
+-> 84 `c
+-> 80 `c
+-> 84 `c
+-> 69 `c
+-> 82 `c
+-> 77 `c
+-> 0 `c
+..
+]
+[v _term `uc ~T0 @X0 -> 12 `i a ]
+[e = _term F23951 ]
+"143
+[; ;./sim.h: 143:     for(int i =0; i < dataListLength; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 3322  ]
+[e :U 3319 ]
+{
+"144
+[; ;./sim.h: 144:         sprintf(id, "%d", (CanData+i)->valueId);
+[e ( _sprintf (1 , (. , &U _id :s 4C . *U + _CanData * -> _i `x -> -> # *U _CanData `i `x 1 ]
+"145
+[; ;./sim.h: 145:         printLn(init, sizeof(init)/sizeof(char));
+[e ( _printLn (2 , &U _init -> / -> # _init `ui -> # `uc `ui `i ]
+"146
+[; ;./sim.h: 146:         print(para, sizeof(para)/sizeof(char));
+[e ( _print (2 , &U _para -> / -> # _para `ui -> # `uc `ui `i ]
+"147
+[; ;./sim.h: 147:         print(url, sizeof(url)/sizeof(char));
+[e ( _print (2 , &U _url -> / -> # _url `ui -> # `uc `ui `i ]
+"148
+[; ;./sim.h: 148:         printLn(id, strlen(id)+1);
+[e ( _printLn (2 , &U _id -> + ( _strlen (1 -> &U _id `*Cuc -> -> 1 `i `ui `i ]
+"149
+[; ;./sim.h: 149:         print(data, sizeof(data)/sizeof(char));
+[e ( _print (2 , &U _data -> / -> # _data `ui -> # `uc `ui `i ]
+"150
+[; ;./sim.h: 150:         setPostData((CanData+i));
+[e ( _setPostData (1 + _CanData * -> _i `x -> -> # *U _CanData `i `x ]
+"151
+[; ;./sim.h: 151:         printLn(send, sizeof(send)/sizeof(char));
+[e ( _printLn (2 , &U _send -> / -> # _send `ui -> # `uc `ui `i ]
+"152
+[; ;./sim.h: 152:         printLn(term, sizeof(term)/sizeof(char));
+[e ( _printLn (2 , &U _term -> / -> # _term `ui -> # `uc `ui `i ]
+"153
+[; ;./sim.h: 153:     }
+}
+[e ++ _i -> 1 `i ]
+[e :U 3322 ]
+[e $ < _i _dataListLength 3319  ]
+[e :U 3320 ]
+}
+"155
+[; ;./sim.h: 155: }
+[e :UE 3318 ]
+}
+"157
+[; ;./sim.h: 157: uint8_t SIMCardExists(){
 [v _SIMCardExists `(uc ~T0 @X0 1 ef ]
 {
 [e :U _SIMCardExists ]
 [f ]
-"106
-[; ;./sim.h: 106:     char* command="AT+CPIN=?";
+"161
+[; ;./sim.h: 161:     char* command="AT+CPIN=?";
 [v _command `*uc ~T0 @X0 1 a ]
-[e = _command :s 1C ]
-"107
-[; ;./sim.h: 107:     char* response="READY";
+[e = _command :s 5C ]
+"162
+[; ;./sim.h: 162:     char* response="READY";
 [v _response `*uc ~T0 @X0 1 a ]
-[e = _response :s 2C ]
-"108
-[; ;./sim.h: 108:     return checkCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
+[e = _response :s 6C ]
+"163
+[; ;./sim.h: 163:     return checkCommand(command, sizeof(command)/sizeof(char), response, sizeof(response)/sizeof(char));
 [e ) ( _checkCommand (4 , , , _command -> / -> # _command `ui -> # `uc `ui `i _response -> / -> # _response `ui -> # `uc `ui `i ]
-[e $UE 3316  ]
-"109
-[; ;./sim.h: 109: }
-[e :UE 3316 ]
+[e $UE 3323  ]
+"164
+[; ;./sim.h: 164: }
+[e :UE 3323 ]
 }
-"111
-[; ;./sim.h: 111: uint8_t makeConnection(){
+"166
+[; ;./sim.h: 166: uint8_t makeConnection(){
 [v _makeConnection `(uc ~T0 @X0 1 ef ]
 {
 [e :U _makeConnection ]
 [f ]
-"113
-[; ;./sim.h: 113:     return 0;
+"168
+[; ;./sim.h: 168:     return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 3317  ]
-"115
-[; ;./sim.h: 115: }
-[e :UE 3317 ]
+[e $UE 3324  ]
+"170
+[; ;./sim.h: 170: }
+[e :UE 3324 ]
 }
-"117
-[; ;./sim.h: 117: uint8_t setupSIM(struct SIM* sim){
+"172
+[; ;./sim.h: 172: uint8_t setupSIM(struct SIM* sim){
 [v _setupSIM `(uc ~T0 @X0 1 ef1`*S3299 ]
 {
 [e :U _setupSIM ]
 [v _sim `*S3299 ~T0 @X0 1 r1 ]
 [f ]
-"119
-[; ;./sim.h: 119:     sim->card=0;
+"174
+[; ;./sim.h: 174:     sim->card=0;
 [e = . *U _sim 0 -> -> 0 `i `uc ]
-"120
-[; ;./sim.h: 120:     sim->connection=0;
+"175
+[; ;./sim.h: 175:     sim->connection=0;
 [e = . *U _sim 1 -> -> 0 `i `uc ]
-"121
-[; ;./sim.h: 121:     if(!SIMCardExists()) return 1;
-[e $ ! ! != -> ( _SIMCardExists ..  `i -> 0 `i 3319  ]
+"176
+[; ;./sim.h: 176:     if(!SIMCardExists()) return 1;
+[e $ ! ! != -> ( _SIMCardExists ..  `i -> 0 `i 3326  ]
 [e ) -> -> 1 `i `uc ]
-[e $UE 3318  ]
-[e :U 3319 ]
-"122
-[; ;./sim.h: 122:     sim->card=1;
+[e $UE 3325  ]
+[e :U 3326 ]
+"177
+[; ;./sim.h: 177:     sim->card=1;
 [e = . *U _sim 0 -> -> 1 `i `uc ]
-"128
-[; ;./sim.h: 128:     return 0;
+"181
+[; ;./sim.h: 181:     return 0;
 [e ) -> -> 0 `i `uc ]
-[e $UE 3318  ]
-"130
-[; ;./sim.h: 130: }
-[e :UE 3318 ]
+[e $UE 3325  ]
+"183
+[; ;./sim.h: 183: }
+[e :UE 3325 ]
 }
-"37 main.c
-[; ;main.c: 37: static void setupRegs(){
-[v _setupRegs `(v ~T0 @X0 1 sf ]
+"35 main.c
+[; ;main.c: 35: enum state State;
+[v _State `E23960 ~T0 @X0 1 e ]
+"37
+[; ;main.c: 37: static void setupPic(){
+[v _setupPic `(v ~T0 @X0 1 sf ]
 {
-[e :U _setupRegs ]
+[e :U _setupPic ]
 [f ]
 "38
 [; ;main.c: 38:     setupUART();
 [e ( _setupUART ..  ]
-"39
-[; ;main.c: 39: }
-[e :UE 3320 ]
+"40
+[; ;main.c: 40: }
+[e :UE 3327 ]
 }
-"41
-[; ;main.c: 41: static void setup(){
-[v _setup `(v ~T0 @X0 1 sf ]
-{
-[e :U _setup ]
-[f ]
 "42
-[; ;main.c: 42:     setupRegs();
-[e ( _setupRegs ..  ]
-"43
-[; ;main.c: 43: }
-[e :UE 3321 ]
-}
-"45
-[; ;main.c: 45: struct SIM sim;
+[; ;main.c: 42: struct SIM sim;
 [v _sim `S3299 ~T0 @X0 1 e ]
+"43
+[; ;main.c: 43: struct CanData dataList[] = {
+[v _dataList `S3301 ~T0 @X0 -> 3 `i e ]
+[i _dataList
+:U ..
+:U ..
+-> 0 `i
+-> 7 `i
+-> 8 `i
+..
+:U ..
+-> 1 `i
+-> 8 `i
+-> 3 `i
+..
+:U ..
+-> 2 `i
+-> 9 `i
+-> 2 `i
+..
+..
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"47
-[; ;main.c: 47: void main(void)
+"61
+[; ;main.c: 61: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"48
-[; ;main.c: 48: {
+"62
+[; ;main.c: 62: {
 {
 [e :U _main ]
 [f ]
-"50
-[; ;main.c: 50:     OSCFRQ |= 0x07;
-[e =| _OSCFRQ -> -> 7 `i `Vuc ]
-"52
-[; ;main.c: 52:     OSCCON1 = 0b01100001;
-[e = _OSCCON1 -> -> 97 `i `uc ]
-"56
-[; ;main.c: 56:     struct SIM sim;
-[v _sim `S3299 ~T0 @X0 1 a ]
-"57
-[; ;main.c: 57:     setupRegs();
-[e ( _setupRegs ..  ]
-"61
-[; ;main.c: 61:     TRISB &= ~0b00100000;
-[e =& _TRISB -> ~ -> 32 `i `Vuc ]
+"63
+[; ;main.c: 63:     State = setup;
+[e = _State . `E23960 0 ]
 "64
-[; ;main.c: 64:     (INTCON0bits.GIE = 0);
-[e = . . _INTCON0bits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 64:     OSCFRQ |= 0x07;
+[e =| _OSCFRQ -> -> 7 `i `Vuc ]
 "66
-[; ;main.c: 66:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"67
-[; ;main.c: 67:     LATB = 0x00;
-[e = _LATB -> -> 0 `i `uc ]
-"68
-[; ;main.c: 68:     ANSELB = 0x00;
-[e = _ANSELB -> -> 0 `i `uc ]
+[; ;main.c: 66:     OSCCON1 = 0b01100001;
+[e = _OSCCON1 -> -> 97 `i `uc ]
 "69
-[; ;main.c: 69:     TRISB = 0x00;
-[e = _TRISB -> -> 0 `i `uc ]
-[v F23512 `uc ~T0 @X0 -> 19 `i s ]
-[i F23512
-:U ..
-"72
-[; ;main.c: 72:     char command[] = "Wayooo het werkt\n\r";
--> 87 `c
--> 97 `c
--> 121 `c
--> 111 `c
--> 111 `c
--> 111 `c
--> 32 `c
--> 104 `c
--> 101 `c
--> 116 `c
--> 32 `c
--> 119 `c
--> 101 `c
--> 114 `c
--> 107 `c
--> 116 `c
--> 10 `c
--> 13 `c
--> 0 `c
-..
-]
-[v _command `uc ~T0 @X0 -> 19 `i a ]
-[e = _command F23512 ]
+[; ;main.c: 69:     struct SIM sim;
+[v _sim `S3299 ~T0 @X0 1 a ]
+"70
+[; ;main.c: 70:     transmitData(&sim, &dataList, 3);
+[e ( _transmitData (3 , , &U _sim -> &U _dataList `*S3301 -> 3 `i ]
+"71
+[; ;main.c: 71:     setupPic();
+[e ( _setupPic ..  ]
 "73
-[; ;main.c: 73:     while (1)
-[e :U 3324 ]
+[; ;main.c: 73:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
 "74
-[; ;main.c: 74:     {
-{
+[; ;main.c: 74:     LATB = 0x00;
+[e = _LATB -> -> 0 `i `uc ]
+"75
+[; ;main.c: 75:     ANSELB = 0x00;
+[e = _ANSELB -> -> 0 `i `uc ]
+"76
+[; ;main.c: 76:     TRISB = 0x00;
+[e = _TRISB -> -> 0 `i `uc ]
 "77
-[; ;main.c: 77:         print(command, sizeof(command)/sizeof(char));
-[e ( _print (2 , &U _command -> / -> # _command `ui -> # `uc `ui `i ]
+[; ;main.c: 77:     State = wait;
+[e = _State . `E23960 1 ]
+"78
+[; ;main.c: 78:     while (1)
+[e :U 3330 ]
+"79
+[; ;main.c: 79:     {
+{
+"80
+[; ;main.c: 80:         switch(State){
+[e $U 3333  ]
+{
 "81
-[; ;main.c: 81:         _delay((unsigned long)((5000)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 81:             case wait:
+[e :U 3334 ]
+"82
+[; ;main.c: 82:                 (INTCON0bits.GIE = 1);
+[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
 "83
-[; ;main.c: 83:         TRISB ^= 0b00100000;
-[e =^ _TRISB -> -> 32 `i `Vuc ]
+[; ;main.c: 83:                 _delay((unsigned long)((20000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "84
-[; ;main.c: 84:     }
-}
-[e :U 3323 ]
-[e $U 3324  ]
-[e :U 3325 ]
+[; ;main.c: 84:                 State = getGNSS;
+[e = _State . `E23960 2 ]
 "85
-[; ;main.c: 85: }
-[e :UE 3322 ]
+[; ;main.c: 85:                 break;
+[e $U 3332  ]
+"86
+[; ;main.c: 86:             case getGNSS:
+[e :U 3335 ]
+"87
+[; ;main.c: 87:                 (INTCON0bits.GIE = 0);
+[e = . . _INTCON0bits 0 6 -> -> 0 `i `uc ]
+"89
+[; ;main.c: 89:                 State = sendData;
+[e = _State . `E23960 3 ]
+"90
+[; ;main.c: 90:                 break;
+[e $U 3332  ]
+"91
+[; ;main.c: 91:             case sendData:
+[e :U 3336 ]
+"92
+[; ;main.c: 92:                 transmitData(&sim, &dataList, 3);
+[e ( _transmitData (3 , , &U _sim -> &U _dataList `*S3301 -> 3 `i ]
+"93
+[; ;main.c: 93:                 State = wait;
+[e = _State . `E23960 1 ]
+"94
+[; ;main.c: 94:                 break;
+[e $U 3332  ]
+"95
+[; ;main.c: 95:         }
 }
-[a 2C 82 69 65 68 89 0 ]
-[a 1C 65 84 43 67 80 73 78 61 63 0 ]
+[e $U 3332  ]
+[e :U 3333 ]
+[e [\ -> _State `ui , $ -> . `E23960 1 `ui 3334
+ , $ -> . `E23960 2 `ui 3335
+ , $ -> . `E23960 3 `ui 3336
+ 3332 ]
+[e :U 3332 ]
+"96
+[; ;main.c: 96:         TRISB ^= 0b00100000;
+[e =^ _TRISB -> -> 32 `i `Vuc ]
+"97
+[; ;main.c: 97:     }
+}
+[e :U 3329 ]
+[e $U 3330  ]
+[e :U 3331 ]
+"98
+[; ;main.c: 98: }
+[e :UE 3328 ]
+}
+[p f _sprintf 8651904 ]
+[a 3C 37 117 0 ]
+[a 1C 116 111 107 101 110 61 37 115 38 118 97 108 117 101 61 37 100 0 ]
+[a 4C 37 100 0 ]
+[a 6C 82 69 65 68 89 0 ]
+[a 5C 65 84 43 67 80 73 78 61 63 0 ]
+[a 2C 53 53 102 50 48 49 97 57 100 102 55 48 55 99 49 50 100 56 48 49 50 98 97 50 98 49 49 49 99 50 100 51 0 ]
