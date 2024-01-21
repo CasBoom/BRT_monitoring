@@ -32,8 +32,8 @@ NOTE: This has not been tested due to a hardware error.
 
 ## Files
 Short description of the files
-- main.c        Contains basic control flow
-- uart.h        UART driver and base functions
-- sim.h         Contains basic SIM calls and data types
-- constants.h   Containts nice to have constants to make code more readable
-
+- main.c                Contains basic control flow
+- uart.h                UART driver and base functions
+- sim.h                 Contains basic SIM calls and data types
+- constants.h           Containts nice to have constants to make code more readable
+- /mcc_generated_files  This folder contains some files generated via MCC, these are mostly unused but should be a starting point for further development   
